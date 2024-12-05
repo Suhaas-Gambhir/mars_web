@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   },
   description: "Describes the site, useful for search engine optimization (SEO).",
   openGraph: {
-    title: "MARS",
+    title: "Macquarie Aerospace Rover Society",
     description:
-      "Defines Open Graph metadata for social sharing (e.g., how the site appears when shared on Facebook or LinkedIn).",
-    url: "https://chronark.com",
+      "MARS is an exciting, student-led initiative aiming to offer a multi-disciplinary experience. Our mission is to provide hands-on opportunities for students to contribute to the development of an semi-autonomous rover, gearing up to compete in the Australian Rover Challenge in March 2025.",
+    url: "https://mars-web.vercel.app/",
     siteName: "MARS",
     images: [
       {
