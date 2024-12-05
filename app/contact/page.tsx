@@ -33,6 +33,7 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false); // Added loading state
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,11 +44,13 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true when form is submitted
     // Simulate email sending
     setTimeout(() => {
       setFormSubmitted(true);
+      setLoading(false); // Reset loading once submission is complete
       setFormData({ name: "", email: "", message: "" });
-    }, 1000); // Simulate a delay
+    }, 2000); // Simulate a delay
   };
 
   return (
@@ -171,8 +174,15 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     className="block w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none"
+                    disabled={loading} // Disable button during loading
                   >
-                    Send Message
+                    {loading ? (
+                      <div className="flex justify-center items-center">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      </div>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               </>
