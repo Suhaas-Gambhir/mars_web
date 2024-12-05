@@ -1,38 +1,63 @@
 "use client";
-import { Github, Mail, Instagram } from "lucide-react"; // Updated to use Instagram icon
+import { Github, Mail, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
+import { useState } from "react";
 
 const socials = [
   {
-    icon: <Instagram size={20} />, // Updated to Instagram
-    href: "https://www.instagram.com/mq_rover/", // Updated link
-    label: "Instagram", // Updated label
-    handle: "@mq_rover", // Updated handle
-  },
-  {
-    icon: <Mail size={20} />,
-    href: "mailto:rover.mq@gmail.com", // Updated email
-    label: "Email",
-    handle: "rover.mq@gmail.com", // Updated handle
+    icon: <Instagram size={20} />,
+    href: "https://www.instagram.com/mq_rover/",
+    label: "Instagram",
+    handle: "@mq_rover",
   },
   {
     icon: <Github size={20} />,
-    href: "https://github.com/Macquarie-Aerospace-Rover-Society", // Updated GitHub link
+    href: "https://github.com/Macquarie-Aerospace-Rover-Society",
     label: "Github",
-    handle: "MARS", // Updated handle
+    handle: "MARS",
+  },
+  {
+    icon: <Linkedin size={20} />,
+    href: "https://www.linkedin.com/company/macquarie-aerospace-rover-society/",
+    label: "LinkedIn",
+    handle: "Macquarie Aerospace Rover Society",
   },
 ];
 
-export default function Example() {
+export default function ContactPage() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate email sending
+    setTimeout(() => {
+      setFormSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+    }, 1000); // Simulate a delay
+  };
+
   return (
     <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
-      <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
-        <div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
+      <div className="container flex flex-col items-center justify-center min-h-screen px-4 mx-auto pt-20 pb-16">
+        {/* Main Cards */}
+        <div className="grid w-full grid-cols-1 gap-8 mx-auto sm:grid-cols-3 lg:gap-16">
           {socials.map((s) => (
-            <Card key={s.label}> {/* Added a key prop */}
+            <Card key={s.label}>
               <Link
                 href={s.href}
                 target="_blank"
@@ -57,6 +82,103 @@ export default function Example() {
             </Card>
           ))}
         </div>
+
+        {/* Separator */}
+        <div className="w-full my-12 border-t border-zinc-700"></div>
+
+        {/* Contact Us Card */}
+        <Card>
+          <div className="p-8 md:p-16 flex flex-col gap-8">
+            {formSubmitted ? (
+              <div className="text-center">
+                <h2 className="text-2xl font-bold text-green-400">
+                  Thank you for contacting us!
+                </h2>
+                <p className="text-zinc-400">We'll get back to you shortly.</p>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-col items-center gap-4">
+                  <span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+                    <Mail size={20} />
+                  </span>
+                  <span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">
+                    Contact Us
+                  </span>
+                </div>
+                <p className="text-center text-zinc-400">
+                  You can reach us via email at{" "}
+                  <a
+                    href="mailto:rover.mq@gmail.com"
+                    className="text-blue-600 hover:underline"
+                  >
+                    rover.mq@gmail.com
+                  </a>{" "}
+                  or fill out the form below.
+                </p>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-zinc-400"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="block w-full px-4 py-2 mt-2 text-zinc-200 bg-zinc-800 border border-zinc-700 rounded-lg focus:ring focus:ring-blue-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-zinc-400"
+                    >
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="block w-full px-4 py-2 mt-2 text-zinc-200 bg-zinc-800 border border-zinc-700 rounded-lg focus:ring focus:ring-blue-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-zinc-400"
+                    >
+                      Your Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="block w-full px-4 py-2 mt-2 text-zinc-200 bg-zinc-800 border border-zinc-700 rounded-lg focus:ring focus:ring-blue-400 focus:outline-none"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="block w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </Card>
       </div>
     </div>
   );
