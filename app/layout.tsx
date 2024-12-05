@@ -4,21 +4,23 @@ import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
+// https://chatgpt.com/share/67516010-a960-800c-b32c-8cb282ad290c
+
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "MARS",
+    template: "%s | MARS",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Describes the site, useful for search engine optimization (SEO).",
   openGraph: {
-    title: "chronark.com",
+    title: "MARS",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+      "Defines Open Graph metadata for social sharing (e.g., how the site appears when shared on Facebook or LinkedIn).",
     url: "https://chronark.com",
-    siteName: "chronark.com",
+    siteName: "MARS",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://imagedelivery.net/j3_lf_5n8ps_wC1h8l6tfg/669752a1-4ca0-46b3-5fc6-ed37ce6bde00/public",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "MARS",
     card: "summary_large_image",
   },
   icons: {
