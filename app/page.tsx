@@ -8,8 +8,7 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden bg-gradient-to-tl from-black via-red-900/15 to-black">
-
+<div className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       {/* Section 1 */}
       <div className="h-[100vh] w-full relative flex flex-col items-center justify-center">
         {/* Navigation */}
