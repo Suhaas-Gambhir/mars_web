@@ -68,7 +68,14 @@ export default function Home() {
 
       {/* Footer Message */}
       <div className="my-16 text-center animate-fade-in z-10">
-        <h2 className="text-sm text-zinc-500">Hi Jake.</h2>
+        <h2 className="text-sm text-zinc-500">Hi there!.</h2>
+        {/* Logo */}
+        <img
+    src="/qr.png"
+    alt="qr"
+    className="w-80 h-80 sm:w-96 sm:h-96 animate-scale-in opacity-90"
+/>
+
       </div>
     </div>
   );
