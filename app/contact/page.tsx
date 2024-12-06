@@ -54,7 +54,7 @@ export default function ContactPage() {
 
     // Submit the form to Formsubmit
     try {
-      const response = await fetch("https://formsubmit.co/rover.mq@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ff995973f6ad0aebdd648ac2b764b9e0", {
         method: "POST",
         body: formDataToSend,
       });
