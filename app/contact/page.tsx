@@ -46,17 +46,21 @@ export default function ContactPage() {
     e.preventDefault();
     setIsLoading(true); // Set loading to true when submitting
 
-    // Prepare FormData for submission
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("message", formData.message);
+    // Prepare the payload for Web3Forms
+    const payload = {
+      access_key: "062e4011-06cd-4c1b-b11a-b2802dc57bd0", //process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY!, // Access key from environment variables
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
 
-    // Submit the form to Formsubmit
     try {
-      const response = await fetch("https://formsubmit.co/ff995973f6ad0aebdd648ac2b764b9e0", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formDataToSend,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
