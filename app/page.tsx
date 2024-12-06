@@ -8,7 +8,8 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden bg-gradient-to-tl from-black via-red-900/15 to-black">
+
       {/* Section 1 */}
       <div className="h-[100vh] w-full relative flex flex-col items-center justify-center">
         {/* Navigation */}
@@ -41,11 +42,11 @@ export default function Home() {
           <img
             src="/mars_logo3.png"
             alt="MARS Logo"
-            className="w-40 h-40 sm:w-64 sm:h-64 animate-scale-in opacity-90 mb-6"
+            className="w-40 h-40 sm:w-64 sm:h-64 animate-scale-in opacity-90"
           />
 
           {/* Animated MARS Text */}
-          <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
+          <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text mt-[-65px]">
             MARS
           </h1>
         </div>
