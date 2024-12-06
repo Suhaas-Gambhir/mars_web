@@ -33,7 +33,6 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false); // Added loading state
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -42,15 +41,32 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when form is submitted
-    // Simulate email sending
-    setTimeout(() => {
-      setFormSubmitted(true);
-      setLoading(false); // Reset loading once submission is complete
-      setFormData({ name: "", email: "", message: "" });
-    }, 2000); // Simulate a delay
+
+    // Prepare FormData for submission
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+
+    // Submit the form to Formsubmit
+    try {
+      const response = await fetch("https://formsubmit.co/rover.mq@gmail.com", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("There was an issue submitting the form. Please try again.");
+    }
   };
 
   return (
@@ -174,15 +190,8 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     className="block w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none"
-                    disabled={loading} // Disable button during loading
                   >
-                    {loading ? (
-                      <div className="flex justify-center items-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      </div>
-                    ) : (
-                      "Send Message"
-                    )}
+                    Send Message
                   </button>
                 </form>
               </>
