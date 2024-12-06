@@ -39,7 +39,7 @@ export default function Home() {
         <div className="relative flex flex-col items-center justify-center z-10 overflow-hidden">
           {/* Logo */}
           <img
-            src="/mars_logo2.png"
+            src="/mars_logo3.png"
             alt="MARS Logo"
             className="w-40 h-40 sm:w-64 sm:h-64 animate-scale-in opacity-90 mb-6"
           />
