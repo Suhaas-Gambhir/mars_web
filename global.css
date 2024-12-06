@@ -22,3 +22,30 @@
 .animate-scale-in {
   animation: scale-in 1.5s ease-in-out forwards;
 }
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of vertical scrollbar */
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Dark background for the track */
+  border-radius: 10px; /* Rounded edges for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a; /* Dark gray thumb for contrast */
+  border-radius: 10px; /* Rounded edges for the thumb */
+  border: 2px solid #1e1e1e; /* Adds a gap around the thumb for a cleaner look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a; /* Slightly lighter thumb on hover for feedback */
+}
+
+/* Firefox Browsers */
+html {
+  scrollbar-width: thin; /* Thin scrollbar for a sleek look */
+  scrollbar-color: #4a4a4a #1e1e1e; /* Thumb and track colors */
+}
