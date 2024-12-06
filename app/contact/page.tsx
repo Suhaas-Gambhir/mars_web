@@ -28,6 +28,7 @@ const socials = [
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Loading state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,6 +44,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true); // Set loading to true when submitting
 
     // Prepare FormData for submission
     const formDataToSend = new FormData();
@@ -66,6 +68,8 @@ export default function ContactPage() {
     } catch (error) {
       console.error(error);
       alert("There was an issue submitting the form. Please try again.");
+    } finally {
+      setIsLoading(false); // Set loading to false when done
     }
   };
 
@@ -190,8 +194,15 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     className="block w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none"
+                    disabled={isLoading} // Disable button while loading
                   >
-                    Send Message
+                    {isLoading ? (
+                      <div className="flex justify-center">
+                        <div className="w-6 h-6 border-t-2 border-white border-solid rounded-full animate-spin"></div>
+                      </div>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               </>
