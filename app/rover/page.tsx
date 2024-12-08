@@ -1,5 +1,7 @@
 "use client";
 
+// npm install @react-three/fiber @react-three/drei @react-spring/three three
+
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";

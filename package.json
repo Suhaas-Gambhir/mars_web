@@ -11,6 +11,9 @@
   "dependencies": {
     "@next/font": "^13.5.4",
     "@next/mdx": "^13.5.4",
+    "@react-spring/three": "^9.7.5",
+    "@react-three/drei": "^9.120.3",
+    "@react-three/fiber": "^8.17.10",
     "@upstash/redis": "^1.23.3",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
@@ -25,6 +28,7 @@
     "rehype-pretty-code": "^0.10.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "3.0.1",
+    "three": "^0.171.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
