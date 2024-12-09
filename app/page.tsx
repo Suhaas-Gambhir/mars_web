@@ -53,7 +53,8 @@ export default function Home() {
                   "text-xl",           // Font size
                   "duration-500",      // Transition duration
                   "text-zinc-200",     // Text color
-                  "hover:text-red-500" // Text color on hover
+                  "hover:text-red-500", // Text color on hover
+                  // "hover:underline"
                 ].join(' ')}
               >
                 {item.name}
@@ -76,18 +77,18 @@ export default function Home() {
             "to-zinc-300/0"        // Gradient end color
           ].join(' ')}/>
 
-        {/* Particles Background */}
-        <Particles
-          className={[
-            "absolute",        // Position absolute
-            "inset-0",         // Inset on all sides
-            "-z-10",           // Negative z-index
-            // "animate-fade-in", // Fade-in animation  // TODO is a fade in needed?
-            "w-full",          // Full width
-            "h-full"           // Full height
-          ].join(' ')}
-          quantity={300}
-        />
+          {/* Particles Background */}
+          <Particles
+            className={[
+              "absolute",        // Position absolute
+              "inset-0",         // Inset on all sides
+              "-z-10",           // Negative z-index
+              // "animate-fade-in", // Fade-in animation  // TODO is a fade in needed?
+              "w-full",          // Full width
+              "h-full"           // Full height
+            ].join(' ')}
+            quantity={300}
+          />
 
         {/* Logo and Animated Text */}
         <div className={[
