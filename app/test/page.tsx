@@ -4,13 +4,13 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import React, { useState } from "react";
 import * as THREE from "three";
 
-export default function Home() {
+const TestPage = () => {
   const [selectedMesh, setSelectedMesh] = useState<THREE.Object3D | null>(null);
 
   return (
     <div style={{ display: "flex" }}>
       {/* Sidebar for Mesh Control */}
-      <Sidebar path="/models/rover.glb" onMeshSelect={setSelectedMesh} />
+      <Sidebar path="/models/banana_box.glb" onMeshSelect={setSelectedMesh} />
 
       {/* CAD Viewer */}
       <Canvas
@@ -18,7 +18,7 @@ export default function Home() {
         style={{ height: "100vh", width: "100%" }}
       >
         {/* Set Background Color to Grey */}
-        <color attach="background" args={["white"]} />
+        <color attach="background" args={["#EDEBE5"]} />
 
         {/* Lighting */}
         <ambientLight intensity={0.5} />
@@ -31,7 +31,7 @@ export default function Home() {
         <FitToView selectedMesh={selectedMesh} />
 
         {/* Model */}
-        <Model path="/models/rover.glb" />
+        <Model path="/models/banana_box.glb" />
       </Canvas>
     </div>
   );
@@ -51,7 +51,7 @@ function Sidebar({
   React.useEffect(() => {
     const extractedMeshes: THREE.Object3D[] = [];
     scene.traverse((child) => {
-      if (child.isMesh) {
+      if ((child as THREE.Mesh).isMesh) {
         extractedMeshes.push(child);
       }
     });
@@ -124,6 +124,17 @@ function FitToView({ selectedMesh }: { selectedMesh: THREE.Object3D | null }) {
 
 function Model({ path }: { path: string }) {
   const { scene } = useGLTF(path);
+  console.log("Loaded model:", scene.children[1].children[0].children);
 
+  ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).transparent = true;
+  ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).opacity = 0.5;
+  ((scene.children[1].children[0].children[3] as THREE.Mesh).material as THREE.MeshBasicMaterial).wireframe = true;
+
+
+  // scene.children[1].children[0].children[0].material.transparent = true;
+  // scene.children[1].children[0].children[0].material.opacity = 0.5;
+  // scene.children[1].children[0].children[3].material.wireframe = true;
   return <primitive object={scene} />;
 }
+
+export default TestPage;
