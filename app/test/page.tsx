@@ -12,7 +12,7 @@ export default function Home() {
         <directionalLight position={[10, 10, 5]} intensity={1} />
         
         {/* Model Loading */}
-        <Model path="/models/rover.glb" />
+        <Model path="/models/nasa.glb" />
         
         {/* Controls */}
         <OrbitControls />
