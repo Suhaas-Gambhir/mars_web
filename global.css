@@ -49,3 +49,7 @@ html {
   scrollbar-width: thin; /* Thin scrollbar for a sleek look */
   scrollbar-color: #4a4a4a #1e1e1e; /* Thumb and track colors */
 }
+
+html {
+  scroll-behavior: smooth;
+}
