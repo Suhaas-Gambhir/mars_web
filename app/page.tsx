@@ -8,17 +8,53 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className={[
+      "flex",                // Flexbox layout
+      "flex-col",            // Flex direction column
+      "items-center",        // Align items to the center
+      "justify-center",      // Center items horizontally
+      "w-full",              // Full width
+      "min-h-screen",        // Minimum height of the screen
+      "overflow-hidden",     // Hide overflow
+      "bg-gradient-to-tl",   // Background gradient to top left
+      "from-black",          // Gradient start color
+      "via-zinc-600/20",     // Gradient middle color
+      "to-black"             // Gradient end color
+    ].join(' ')}>
       {/* Section 1 */}
-      <div className="h-[100vh] w-full relative flex flex-col items-center justify-center">
+      <div className={[
+        "h-[100vh]",        // Height of 100% of the viewport height
+        "w-full",           // Full width
+        "relative",         // Position relative
+        "flex",             // Flexbox layout
+        "flex-col",         // Flex direction column
+        "items-center",     // Align items to the center
+        "justify-center"    // Center items horizontally
+      ].join(' ')}>
         {/* Navigation */}
-        <nav className="my-8 animate-fade-in z-20">
-          <ul className="flex items-center justify-center gap-4">
+        <nav className={[
+          "my-8",            // Margin top and bottom
+          "animate-fade-in", // Fade-in animation
+          "z-20"             // Z-index
+        ].join(' ')}>
+
+          <ul className={[
+            "flex",              // Flexbox layout
+            "items-center",      // Align items to the center
+            "justify-center",    // Center items horizontally
+            "gap-4"              // Gap between items
+          ].join(' ')}>
+
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xl duration-500 text-zinc-200 hover:text-red-500"
+                className={[
+                  "text-xl",           // Font size
+                  "duration-500",      // Transition duration
+                  "text-zinc-200",     // Text color
+                  "hover:text-red-500" // Text color on hover
+                ].join(' ')}
               >
                 {item.name}
               </Link>
@@ -27,29 +63,64 @@ export default function Home() {
         </nav>
 
         {/* Glowing Line (Top) */}
-        <div className="hidden w-full h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+        <div className={[
+            "hidden",              // Hide element
+            "w-full",              // Full width
+            "h-px",                // Height of 1 pixel
+            "animate-glow",        // Glow animation
+            "md:block",            // Display block on medium screens and up
+            "animate-fade-left",   // Fade left animation
+            "bg-gradient-to-r",    // Background gradient to right
+            "from-zinc-300/0",     // Gradient start color
+            "via-zinc-300/50",     // Gradient middle color
+            "to-zinc-300/0"        // Gradient end color
+          ].join(' ')}/>
 
         {/* Particles Background */}
         <Particles
-          className="absolute inset-0 -z-10 animate-fade-in w-full h-full"
+          className={[
+            "absolute",        // Position absolute
+            "inset-0",         // Inset on all sides
+            "-z-10",           // Negative z-index
+            // "animate-fade-in", // Fade-in animation  // TODO is a fade in needed?
+            "w-full",          // Full width
+            "h-full"           // Full height
+          ].join(' ')}
           quantity={300}
         />
 
         {/* Logo and Animated Text */}
-        <div className="relative flex flex-col items-center justify-center z-10 overflow-hidden">
+        <div className={[
+          "relative",         // Position relative
+          "flex",             // Flexbox layout
+          "flex-col",         // Flex direction column
+          "items-center",     // Align items to the center
+          "justify-center",   // Center items horizontally
+          "z-10",             // Z-index
+          "overflow-hidden"   // Hide overflow
+        ].join(' ')}>
           {/* Logo */}
           <img
             src="/mars_logo3.png"
             alt="MARS Logo"
-            className="w-40 h-40 sm:w-64 sm:h-64 animate-scale-in opacity-90"
+            className={[
+              "w-40",             // Width 40 units
+              "h-40",             // Height 40 units
+              "sm:w-64",          // Width 64 units on small screens
+              "sm:h-64",          // Height 64 units on small screens
+              "animate-scale-in", // Scale-in animation
+              "opacity-90"        // 90% opacity
+            ].join(' ')}
           />
 
           {/* Animated MARS Text */}
+
           {/* Wireframe title */}
           {/* <h1 className="py-3.5 px-0.5 z-10 text-4xl
           text-transparent duration-1000 cursor-default
           text-edge-outline animate-title font-display
           sm:text-6xl md:text-9xl whitespace-nowrap"></h1> */}
+
           <h1 className={[
             "py-3.5",            // Padding top and bottom
             "px-0.5",            // Padding left and right
@@ -58,7 +129,7 @@ export default function Home() {
             "text-transparent",  // Text color
             "duration-1000",     // Transition duration
             "bg-white",          // Background color
-            "cursor-default",    // Cursor style
+            // "cursor-default",    // Cursor style // TODO Remove this?
             "text-edge-outline", // Text outline
             "animate-title",     // Animation
             "font-display",      // Font family
@@ -71,41 +142,115 @@ export default function Home() {
             MARS
           </h1>
 
-          <a
+          {/* <a
             href="#section2"
             className="mt-6 px-6 py-2 text-base text-black bg-white rounded-full hover:bg-zinc-200 hover:scale-105 animate-fade-in"
-          >
+          > */}
+          <a href="#section2" className={[
+            "mt-6",              // Margin top
+            "px-6",              // Padding left and right
+            "py-2",              // Padding top and bottom
+            "text-base",         // Font size
+            "text-black",        // Text color
+            "bg-white",          // Background color
+            "rounded-full",      // Rounded corners
+            "hover:bg-zinc-200", // Background color on hover
+            "hover:scale-105",   // Scale on hover
+            "animate-fade-in"    // Fade-in animation
+          ].join(' ')}>
             Learn More
           </a>
-
-
 
         </div>
 
         {/* Glowing Line (Bottom) */}
-        <div className="hidden w-full h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+        <div className={[
+          "hidden",              // Hide element
+          "w-full",              // Full width
+          "h-px",                // Height of 1 pixel
+          "animate-glow",        // Glow animation
+          "md:block",            // Display block on medium screens and up
+          "animate-fade-right",  // Fade right animation
+          "bg-gradient-to-r",    // Background gradient to right
+          "from-zinc-300/0",     // Gradient start color
+          "via-zinc-300/50",     // Gradient middle color
+          "to-zinc-300/0"        // Gradient end color
+        ].join(' ')}/>
       </div>
       {/* Animated White Arrow */}
-      <div className="relative flex flex-col items-center justify-end mt-10 animate-bounce">
-        <div className="w-8 h-8 border-4 border-t-4 border-white rounded-full animate-pulse mb-4"></div>
+      <div className={[
+        "relative",         // Position relative
+        "flex",             // Flexbox layout
+        "flex-col",         // Flex direction column
+        "items-center",     // Align items to the center
+        "justify-end",      // Justify content to the end
+        "mt-10",            // Margin top
+        "animate-bounce"    // Bounce animation
+      ].join(' ')}>
+        <div className={[
+          "w-8",              // Width 8 units
+          "h-8",              // Height 8 units
+          "border-4",         // Border width 4 units
+          "border-t-4",       // Top border width 4 units
+          "border-white",     // Border color white
+          "rounded-full",     // Fully rounded corners
+          "animate-pulse",    // Pulse animation
+          "mb-4"              // Margin bottom 4 units
+        ].join(' ')}></div>
       </div>
 
       {/* Section 2 - second page */}
-      <section id="section2" className="w-full bg-white py-16">
-        <div className="flex flex-col items-center justify-center">
-          <h2 className="text-3xl font-semibold text-black">Welcome to MARS</h2>
+      <section
+        id="section2"
+        className={[
+          "w-full",       // Full width
+          "bg-white",     // Background color white
+          "py-16"         // Padding top and bottom
+        ].join(' ')}>
+
+        <div
+          className={[
+            "flex",             // Flexbox layout
+            "flex-col",         // Flex direction column
+            "items-center",     // Align items to the center
+            "justify-center"    // Center items horizontally
+          ].join(' ')}>
+
+          <h2
+            className={[
+              "text-3xl",        // Font size
+              "font-semibold",   // Font weight
+              "text-black"       // Text color
+            ].join(' ')}>
+            Welcome to MARS
+          </h2>
+
           {/* Additional content can go here */}
         </div>
       </section>
 
       {/* Footer Message */}
-      <div className="my-16 text-center animate-fade-in z-10">
-        <h2 className="text-sm text-zinc-500">Hi there!.</h2>
+      <div className={[
+        "my-16",           // Margin top and bottom
+        "text-center",     // Center text
+        "animate-fade-in", // Fade-in animation
+        "z-10"             // Z-index
+      ].join(' ')}>
+        <h2 className="text-sm text-zinc-500"> {/* Small text size, Text color */}
+          Hi there!.
+        </h2>
         {/* Logo */}
         <img
           src="/qr.png"
           alt="qr"
-          className="w-80 h-80 sm:w-96 sm:h-96 animate-scale-in opacity-90"
+          className={[
+            "w-80",            // Width 80 units
+            "h-80",            // Height 80 units
+            "sm:w-96",         // Width 96 units on small screens
+            "sm:h-96",         // Height 96 units on small screens
+            "animate-scale-in",// Scale-in animation
+            "opacity-90"       // 90% opacity
+          ].join(' ')}
         />
 
       </div>
