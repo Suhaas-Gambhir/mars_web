@@ -10,7 +10,7 @@ const TestPage = () => {
   return (
     <div style={{ display: "flex" }}>
       {/* Sidebar for Mesh Control */}
-      <Sidebar path="/models/banana_box.glb" onMeshSelect={setSelectedMesh} />
+      {/* <Sidebar path="/models/banana_box.glb" onMeshSelect={setSelectedMesh} /> */}
 
       {/* CAD Viewer */}
       <Canvas
