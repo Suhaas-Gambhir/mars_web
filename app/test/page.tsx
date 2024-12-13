@@ -126,9 +126,9 @@ function Model({ path }: { path: string }) {
   const { scene } = useGLTF(path);
   console.log("Loaded model:", scene.children[1].children[0].children);
 
-  ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).transparent = true;
-  ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).opacity = 0.5;
-  ((scene.children[1].children[0].children[3] as THREE.Mesh).material as THREE.MeshBasicMaterial).wireframe = true;
+  // ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).transparent = true;
+  // ((scene.children[1].children[0].children[0] as THREE.Mesh ).material as THREE.Material).opacity = 0.5;
+  // ((scene.children[1].children[0].children[3] as THREE.Mesh).material as THREE.MeshBasicMaterial).wireframe = true;
 
 
   // scene.children[1].children[0].children[0].material.transparent = true;
