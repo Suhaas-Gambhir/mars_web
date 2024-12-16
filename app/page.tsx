@@ -148,7 +148,8 @@ export default function Home() {
               "whitespace-nowrap", // Prevent text wrapping
               "bg-clip-text", // Background clip for text
               // "sm:mt-[-100px]", // Margin top
-              "md:mt-[-65px]", // Margin top
+              "mt-[-35px]", // Margin top
+              "md:mt-[-65px]"
             ].join(" ")}
           >
             MARS
@@ -158,7 +159,9 @@ export default function Home() {
             className={[
               "text-xs", // Font size
               "text-white", // Text color
-              "mt-[-25px]", // Margin top
+              "mt-[-15px]", // Margin top
+              "sm:mt-[-20px]",
+              "md:mt-[-35px]",
               "text-center", // Center alignment
               "animate-title", // Animation
               "mb-5",
