@@ -1,6 +1,8 @@
+import { Navigation } from "./components/nav"; // Import Navigation component
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import Image from "next/image"; // Added for professional content
 
 const navigation = [{ name: "Contact", href: "/contact" }];
 
@@ -21,6 +23,9 @@ export default function Home() {
         "to-black", // Gradient end color
       ].join(" ")}
     >
+      {/* Navbar */}
+      <Navigation />
+
       {/* Section 1 */}
       <div
         className={[
@@ -33,63 +38,12 @@ export default function Home() {
           "justify-center", // Center items horizontally
         ].join(" ")}
       >
-        {/* Navigation */}
-        <nav
-          className={[
-            "my-8", // Margin top and bottom
-            "animate-fade-in", // Fade-in animation
-            "z-20", // Z-index
-          ].join(" ")}
-        >
-          <ul
-            className={[
-              "flex", // Flexbox layout
-              "items-center", // Align items to the center
-              "justify-center", // Center items horizontally
-              "gap-4", // Gap between items
-            ].join(" ")}
-          >
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={[
-                  "text-xl", // Font size
-                  "duration-500", // Transition duration
-                  "text-zinc-200", // Text color
-                  "hover:text-red-500", // Text color on hover
-                  // "hover:underline"
-                ].join(" ")}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Glowing Line (Top) */}
-        <div
-          className={[
-            "hidden", // Hide element
-            "w-full", // Full width
-            "h-px", // Height of 1 pixel
-            "animate-glow", // Glow animation
-            "md:block", // Display block on medium screens and up
-            "animate-fade-left", // Fade left animation
-            "bg-gradient-to-r", // Background gradient to right
-            "from-zinc-300/0", // Gradient start color
-            "via-zinc-300/50", // Gradient middle color
-            "to-zinc-300/0", // Gradient end color
-          ].join(" ")}
-        />
-
         {/* Particles Background */}
         <Particles
           className={[
             "absolute", // Position absolute
             "inset-0", // Inset on all sides
             "-z-10", // Negative z-index
-            // "animate-fade-in", // Fade-in animation  // TODO is a fade in needed?
             "w-full", // Full width
             "h-full", // Full height
           ].join(" ")}
@@ -122,14 +76,6 @@ export default function Home() {
             ].join(" ")}
           />
 
-          {/* Animated MARS Text */}
-
-          {/* Wireframe title */}
-          {/* <h1 className="py-3.5 px-0.5 z-10 text-4xl
-          text-transparent duration-1000 cursor-default
-          text-edge-outline animate-title font-display
-          sm:text-6xl md:text-9xl whitespace-nowrap"></h1> */}
-
           <h1
             className={[
               "py-3.5", // Padding top and bottom
@@ -139,44 +85,33 @@ export default function Home() {
               "text-transparent", // Text color
               "duration-1000", // Transition duration
               "bg-white", // Background color
-              // "cursor-default",    // Cursor style // TODO Remove this?
               "text-edge-outline", // Text outline
               "animate-title", // Animation
               "font-display", // Font family
-              // "sm:text-6xl", // Font size for small screens
               "md:text-9xl", // Font size for medium screens
               "whitespace-nowrap", // Prevent text wrapping
               "bg-clip-text", // Background clip for text
-              // "sm:mt-[-100px]", // Margin top
               "mt-[-35px]", // Margin top
-              "md:mt-[-65px]"
+              "md:mt-[-65px]",
             ].join(" ")}
           >
             MARS
           </h1>
-          {/* Full Form Text */}
+
           <p
             className={[
               "text-xs", // Font size
               "text-white", // Text color
               "mt-[-15px]", // Margin top
-              "sm:mt-[-20px]",
-              "md:mt-[-35px]",
               "text-center", // Center alignment
-              "animate-title", // Animation
-              "mb-5",
-              "sm:text-sm", // Text becomes small (text-sm) when the screen is >= 640px
-              "md:text-base", // Text becomes normal size (text-base) for medium screens (>= 768px)
-              "lg:text-xl", // Text becomes extra large (text-xl) for large screens (>= 1024px)
+              "sm:text-sm", // Small text on screens >= 640px
+              "md:text-base", // Normal text on medium screens
+              "lg:text-xl", // Extra-large text on large screens
             ].join(" ")}
           >
             Macquarie Aerospace Rover Society
           </p>
 
-          {/* <a
-            href="#section2"
-            className="mt-6 px-6 py-2 text-base text-black bg-white rounded-full hover:bg-zinc-200 hover:scale-105 animate-fade-in"
-          > */}
           <a
             href="#section2"
             className={[
@@ -187,63 +122,22 @@ export default function Home() {
               "text-black", // Text color
               "bg-white", // Background color
               "rounded-full", // Rounded corners
-              "hover:bg-zinc-200", // Background color on hover
-              "hover:scale-105", // Scale on hover
+              "hover:bg-zinc-200", // Hover effect
+              "hover:scale-105", // Hover scale effect
               "animate-fade-in", // Fade-in animation
             ].join(" ")}
           >
             Learn More
           </a>
         </div>
-
-        {/* Glowing Line (Bottom) */}
-        <div
-          className={[
-            "hidden", // Hide element
-            "w-full", // Full width
-            "h-px", // Height of 1 pixel
-            "animate-glow", // Glow animation
-            "md:block", // Display block on medium screens and up
-            "animate-fade-right", // Fade right animation
-            "bg-gradient-to-r", // Background gradient to right
-            "from-zinc-300/0", // Gradient start color
-            "via-zinc-300/50", // Gradient middle color
-            "to-zinc-300/0", // Gradient end color
-          ].join(" ")}
-        />
-      </div>
-      {/* Animated White Arrow */}
-      <div
-        className={[
-          "relative", // Position relative
-          "flex", // Flexbox layout
-          "flex-col", // Flex direction column
-          "items-center", // Align items to the center
-          "justify-end", // Justify content to the end
-          "mt-[-35px]", // Margin top
-          "animate-bounce", // Bounce animation
-        ].join(" ")}
-      >
-        <div
-          className={[
-            "w-8", // Width 8 units
-            "h-8", // Height 8 units
-            "border-4", // Border width 4 units
-            "border-t-4", // Top border width 4 units
-            "border-white", // Border color white
-            "rounded-full", // Fully rounded corners
-            "animate-pulse", // Pulse animation
-            "mb-4", // Margin bottom 4 units
-          ].join(" ")}
-        ></div>
       </div>
 
-      {/* Section 2 - second page */}
+      {/* Section 2 */}
       <section
         id="section2"
         className={[
           "w-full", // Full width
-          "bg-white", // Background color white
+          "bg-white", // White background
           "py-16", // Padding top and bottom
         ].join(" ")}
       >
@@ -265,7 +159,27 @@ export default function Home() {
             Welcome to MARS
           </h2>
 
-          {/* Additional content can go here */}
+          {/* Additional professional content */}
+          <div className="mt-6 text-lg text-center text-zinc-700">
+            <p>
+              The Macquarie Aerospace Rover Society (MARS) is a student-led initiative dedicated to advancing technology and innovation in the field of autonomous systems. We are actively working on developing semi-autonomous lunar rovers to participate in the prestigious Australian Rover Challenge (ARCh). Our team focuses on cutting-edge technologies, including machine learning, robotics, and path planning, to push the boundaries of what's possible in autonomous systems.
+            </p>
+
+            <p className="mt-4">
+              With the goal of competing in ARCh, we are designing and building a rover capable of navigating complex terrains and performing autonomous tasks in a simulated lunar environment. Join us in our mission to revolutionize space exploration through innovation and teamwork.
+            </p>
+          </div>
+
+          {/* Image showcasing the rover */}
+          <div className="mt-8">
+            <Image
+              src="/rover-challenge.jpg"
+              alt="Australian Rover Challenge"
+              width={1200}
+              height={800}
+              className="rounded-lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -281,9 +195,8 @@ export default function Home() {
         <h2 className="text-sm text-zinc-500">
           {" "}
           {/* Small text size, Text color */}
-          Hi there!.
+          Hi there!
         </h2>
-        {/* Logo */}
         <img
           src="/qr.png"
           alt="qr"
