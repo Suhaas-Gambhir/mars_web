@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto py-12">
+    <div className="container mx-auto py-24">
       <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
       <div className="max-w-2xl mx-auto">
         <form className="space-y-6">

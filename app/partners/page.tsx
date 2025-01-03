@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function PartnersPage() {
   return (
-    <div className="container mx-auto py-12">
+    <div className="container mx-auto py-24">
       <h1 className="text-4xl font-bold mb-8">Our Partners</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (

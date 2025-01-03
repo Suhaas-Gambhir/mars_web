@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function RecruitmentPage() {
   return (
-    <div className="container mx-auto py-12">
+    <div className="container mx-auto py-24">
       <h1 className="text-4xl font-bold mb-8">Join Our Team</h1>
       <div className="max-w-3xl mx-auto">
         <p className="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
