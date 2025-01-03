@@ -37,7 +37,7 @@ export function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className="bg-gradient-to-b from-white to-white/50 dark:from-white dark:to-white/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
+          className="bg-gradient-to-b from-black to-black/50 dark:from-white dark:to-white/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -47,12 +47,12 @@ export function Hero() {
           Macquarie Rover Team
         </motion.h1>
         <motion.p
-          className="mt-4 text-lg text-white/90 dark:text-white/90 sm:text-xl md:text-2xl"
+          className="mt-4 text-lg text-black/90 dark:text-white/90 sm:text-xl md:text-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          Building rovers since 2023
+          Building rovers since 2025
         </motion.p>
         <motion.div
           className="mt-8"
