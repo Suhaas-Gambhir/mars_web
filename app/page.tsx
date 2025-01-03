@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="flex min-h-screen items-center justify-center">
+      <section id="about" className="py-24">
         <div className="container px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl dark:text-white">
