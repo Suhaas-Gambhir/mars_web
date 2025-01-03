@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { Toaster } from "@/components/ui/toaster";
 
 // https://chatgpt.com/share/67516010-a960-800c-b32c-8cb282ad290c
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           }`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
