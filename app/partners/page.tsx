@@ -1,0 +1,28 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
+
+export default function PartnersPage() {
+  return (
+    <div className="container mx-auto py-12">
+      <h1 className="text-4xl font-bold mb-8">Our Partners</h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <Card key={i}>
+            <CardContent className="p-4">
+              <div className="aspect-square relative mb-4">
+                <Image
+                  src={`/placeholder.svg?height=200&width=200`}
+                  alt={`Partner ${i}`}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <h2 className="text-center font-semibold">Partner {i}</h2>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  )
+}
+
