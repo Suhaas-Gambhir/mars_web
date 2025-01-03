@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils"
 import { ModeToggle } from "./component/theme-toggle"
 
 const menuItems = [
-  { title: "Our Team", href: "/team" },
-  { title: "Competitions", href: "/competitions" },
   { title: "Rovers", href: "/rovers" },
+  { title: "Competitions", href: "/competitions" },
+  { title: "Our Team", href: "/team" },
   { title: "Partners", href: "/partners" },
-  { title: "Contact", href: "/contact" },
   { title: "Join Us", href: "/recruitment" },
   { title: "Sponsor Us", href: "/sponsor" },
+  { title: "Contact", href: "/contact" },
 ]
 
 const socialLinks = [
