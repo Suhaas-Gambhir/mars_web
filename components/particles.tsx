@@ -4,52 +4,53 @@ import React, { useRef, useEffect } from "react";
 import { useMousePosition } from "@/util/mouse";
 import { useTheme } from "next-themes";
 
-// Particle appearance configuration
+// Particle appearance configuration for both light and dark modes
 const PARTICLE_CONFIG = {
 	LIGHT_MODE: {
-		COLOR: '0, 0, 0',
+		COLOR: '0, 0, 0',  // RGB color value for particles in light mode
 		SIZE: {
-			MIN: 2,
-			MAX: 4
+			MIN: 2,        // Minimum particle size in pixels
+			MAX: 4         // Maximum particle size in pixels
 		},
 	},
 	DARK_MODE: {
-		COLOR: '255, 255, 255',
+		COLOR: '255, 255, 255',  // RGB color value for particles in dark mode
 		SIZE: {
-			MIN: 0.2,
-			MAX: 2.2
+			MIN: 0.2,     // Smaller particles in dark mode for subtle effect
+			MAX: 2.2      // Maximum size slightly larger than MIN for variety
 		},
 	}
 };
 
-// Particle behavior configuration
+// Configuration for particle movement and behavior
 const PARTICLE_BEHAVIOR = {
-	DEFAULT_QUANTITY: 30,
-	DEFAULT_STATICITY: 50,
-	DEFAULT_EASE: 50,
+	DEFAULT_QUANTITY: 30,     // Number of particles to render
+	DEFAULT_STATICITY: 50,    // How static/stable particles are (higher = more static)
+	DEFAULT_EASE: 50,         // Easing value for particle movement (higher = smoother)
 	SPEED: {
-		MIN: -0.5,
-		MAX: 0.5,
-		SCALE: 0.2
+		MIN: -0.5,           // Minimum velocity in any direction
+		MAX: 0.5,            // Maximum velocity in any direction
+		SCALE: 0.2           // Multiplier for particle speed
 	},
 	MAGNETISM: {
-		MIN: 0.1,
-		MAX: 4
+		MIN: 0.1,            // Minimum magnetic pull towards mouse
+		MAX: 4               // Maximum magnetic pull towards mouse
 	},
 	ALPHA: {
-		MIN: 0.1,
-		MAX: 0.7,
-		INCREMENT: 0.02
+		MIN: 0.1,            // Minimum opacity of particles
+		MAX: 0.7,            // Maximum opacity of particles
+		INCREMENT: 0.02      // How fast opacity changes
 	},
-	EDGE_FADE_DISTANCE: 20
+	EDGE_FADE_DISTANCE: 20    // Distance from canvas edge where particles start to fade
 };
 
+// Props interface for customizing particle behavior
 interface ParticlesProps {
-	className?: string;
-	quantity?: number;
-	staticity?: number;
-	ease?: number;
-	refresh?: boolean;
+	className?: string;      // CSS class for styling the container
+	quantity?: number;       // Override default particle quantity
+	staticity?: number;      // Override default particle staticity
+	ease?: number;          // Override default easing value
+	refresh?: boolean;      // Force particle system to refresh
 }
 
 export default function Particles({
