@@ -1,19 +1,21 @@
-'use client'
+"use client";
 
-import { useScroll, useTransform, motion } from "framer-motion"
-import { useRef } from "react"
-import Particles from "./particles"
+import { useScroll, useTransform, motion } from "framer-motion";
+import InteractiveHoverButton from "./ui/interactive-hover-button";
+import { useRef } from "react";
+import Particles from "./particles";
+import Link from "next/link";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   return (
     <div
@@ -34,7 +36,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.h1 
+        <motion.h1
           className="bg-gradient-to-b from-white to-white/50 dark:from-white dark:to-white/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +46,7 @@ export function Hero() {
           <br />
           Macquarie Rover Team
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="mt-4 text-lg text-white/90 dark:text-white/90 sm:text-xl md:text-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,21 +54,20 @@ export function Hero() {
         >
           Building rovers since 2023
         </motion.p>
-        <motion.div 
+        <motion.div
           className="mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          <a
-            href="#about"
-            className="rounded-full bg-white px-8 py-3 font-semibold text-gray-900 dark:bg-white dark:text-gray-900 transition hover:bg-white/90 dark:hover:bg-white/90"
-          >
-            Learn More
-          </a>
+          <Link href="#about">
+            <InteractiveHoverButton
+              className="w-48"
+              text="Learn More"
+            />
+          </Link>
         </motion.div>
       </motion.div>
     </div>
-  )
+  );
 }
-
