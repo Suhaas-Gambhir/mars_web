@@ -4,6 +4,46 @@ import React, { useRef, useEffect } from "react";
 import { useMousePosition } from "@/util/mouse";
 import { useTheme } from "next-themes";
 
+// Particle appearance configuration
+const PARTICLE_CONFIG = {
+	LIGHT_MODE: {
+		COLOR: '0, 0, 0',
+		SIZE: {
+			MIN: 2,
+			MAX: 4
+		},
+	},
+	DARK_MODE: {
+		COLOR: '255, 255, 255',
+		SIZE: {
+			MIN: 0.2,
+			MAX: 2.2
+		},
+	}
+};
+
+// Particle behavior configuration
+const PARTICLE_BEHAVIOR = {
+	DEFAULT_QUANTITY: 30,
+	DEFAULT_STATICITY: 50,
+	DEFAULT_EASE: 50,
+	SPEED: {
+		MIN: -0.5,
+		MAX: 0.5,
+		SCALE: 0.2
+	},
+	MAGNETISM: {
+		MIN: 0.1,
+		MAX: 4
+	},
+	ALPHA: {
+		MIN: 0.1,
+		MAX: 0.7,
+		INCREMENT: 0.02
+	},
+	EDGE_FADE_DISTANCE: 20
+};
+
 interface ParticlesProps {
 	className?: string;
 	quantity?: number;
@@ -107,12 +147,16 @@ export default function Particles({
 		const y = Math.floor(Math.random() * canvasSize.current.h);
 		const translateX = 0;
 		const translateY = 0;
-		const size = Math.floor(Math.random() * 2) + (theme === 'dark' ? 0.2 : 2);
+		const config = theme === 'dark' ? PARTICLE_CONFIG.DARK_MODE : PARTICLE_CONFIG.LIGHT_MODE;
+		const size = Math.floor(Math.random() * (config.SIZE.MAX - config.SIZE.MIN)) + config.SIZE.MIN;
 		const alpha = 0;
-		const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
-		const dx = (Math.random() - 0.5) * 0.2;
-		const dy = (Math.random() - 0.5) * 0.2;
-		const magnetism = 0.1 + Math.random() * 4;
+		const targetAlpha = parseFloat((Math.random() * 
+			(PARTICLE_BEHAVIOR.ALPHA.MAX - PARTICLE_BEHAVIOR.ALPHA.MIN) + 
+			PARTICLE_BEHAVIOR.ALPHA.MIN).toFixed(1));
+		const dx = (Math.random() - 0.5) * PARTICLE_BEHAVIOR.SPEED.SCALE;
+		const dy = (Math.random() - 0.5) * PARTICLE_BEHAVIOR.SPEED.SCALE;
+		const magnetism = PARTICLE_BEHAVIOR.MAGNETISM.MIN + 
+			Math.random() * (PARTICLE_BEHAVIOR.MAGNETISM.MAX - PARTICLE_BEHAVIOR.MAGNETISM.MIN);
 		return {
 			x,
 			y,
@@ -128,7 +172,7 @@ export default function Particles({
 	};
 
 	const getParticleColor = () => {
-		return theme === 'dark' ? '255, 255, 255' : '0, 0, 0';
+		return theme === 'dark' ? PARTICLE_CONFIG.DARK_MODE.COLOR : PARTICLE_CONFIG.LIGHT_MODE.COLOR;
 	};
 
 	const drawCircle = (circle: Circle, update = false) => {
