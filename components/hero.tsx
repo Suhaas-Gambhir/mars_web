@@ -5,12 +5,14 @@ import { useRef } from "react"
 import Particles from "./particles"
 
 export function Hero() {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   })
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
 
   return (
@@ -28,23 +30,41 @@ export function Hero() {
       <motion.div
         className="relative z-30 mx-auto max-w-5xl text-center"
         style={{ y: textY }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="bg-gradient-to-b from-white to-white/50 dark:from-white dark:to-white/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+        <motion.h1 
+          className="bg-gradient-to-b from-white to-white/50 dark:from-white dark:to-white/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           Welcome to
           <br />
           Macquarie Rover Team
-        </h1>
-        <p className="mt-4 text-lg text-white/90 dark:text-white/90 sm:text-xl md:text-2xl">
+        </motion.h1>
+        <motion.p 
+          className="mt-4 text-lg text-white/90 dark:text-white/90 sm:text-xl md:text-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
           Building rovers since 2023
-        </p>
-        <div className="mt-8">
+        </motion.p>
+        <motion.div 
+          className="mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
           <a
             href="#about"
             className="rounded-full bg-white px-8 py-3 font-semibold text-gray-900 dark:bg-white dark:text-gray-900 transition hover:bg-white/90 dark:hover:bg-white/90"
           >
             Learn More
           </a>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   )
