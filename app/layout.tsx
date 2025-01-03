@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navigation />
+          <Toaster />
           <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
