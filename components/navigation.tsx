@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Menu} from 'lucide-react'
+import { Menu, Instagram } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -19,7 +19,7 @@ const menuItems = [
 ]
 
 const socialLinks = [
-  { title: "Instagram", href: "https://instagram.com" },
+  { title: "Instagram", href: "https://instagram.com", icon: <Instagram className="h-5 w-5" /> },
 ]
 
 export function Navigation() {
@@ -45,7 +45,7 @@ export function Navigation() {
           <span className="text-xl font-bold">Macquarie Rover</span>
         </Link>
 
-        <nav className="hidden md:flex md:space-x-4 lg:space-x-6">
+        <nav className="hidden md:flex md:space-x-4 lg:space-x-6 absolute left-1/2 transform -translate-x-1/2">
           {menuItems.map((item, index) => (
             <Link
               key={index}
@@ -66,9 +66,11 @@ export function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {item.title}
+              {item.icon}
+              <span className="sr-only">{item.title}</span>
             </Link>
           ))}
+          <ModeToggle />
         </div>
 
         <Sheet>
@@ -98,14 +100,14 @@ export function Navigation() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {item.title}
+                    {item.icon}
+                    <span className="sr-only">{item.title}</span>
                   </Link>
                 ))}
               </div>
             </div>
           </SheetContent>
         </Sheet>
-        <ModeToggle />
       </div>
     </header>
   )
