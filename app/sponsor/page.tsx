@@ -26,19 +26,39 @@ export default function SponsorPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Simulate sending an email
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/sponsorship', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          tier: selectedTier,
+          amount: selectedTier === 'Custom' ? Number(customAmount) : tiers.find(t => t.name === selectedTier)?.amount
+        }),
+      })
 
-    // Show success toast
-    toast({
-      title: "Sponsorship Request Sent",
-      description: "Thank you for your interest in sponsoring our team. We'll be in touch soon!",
-    })
+      if (!response.ok) {
+        throw new Error('Failed to submit sponsorship request')
+      }
 
-    // Reset form
-    setSelectedTier(null)
-    setCustomAmount('')
-    setEmail('')
+      toast({
+        title: "Sponsorship Request Sent",
+        description: "Thank you for your interest in sponsoring our team. We'll be in touch soon!",
+      })
+
+      // Reset form
+      setSelectedTier(null)
+      setCustomAmount('')
+      setEmail('')
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive",
+      })
+    }
   }
 
   return (
