@@ -16,6 +16,7 @@ const menuItems = [
   { title: "Partners", href: "/partners" },
   { title: "Contact", href: "/contact" },
   { title: "Join Us", href: "/recruitment" },
+  { title: "Sponsor Us", href: "/sponsor" },
 ]
 
 const socialLinks = [
