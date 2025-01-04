@@ -4,7 +4,14 @@ import { sql } from "@vercel/postgres"
 
 export async function POST(request: Request) {
   try {
-    const { name, email, password } = await request.json()
+    const { name, email, password, secretCode } = await request.json()
+
+    // Validate secret code
+    if (!secretCode || secretCode !== process.env.SIGNUP_SECRET_CODE) {
+      return NextResponse.json({ 
+        message: 'Invalid secret code' 
+      }, { status: 403 })
+    }
 
     // Check if user already exists
     const existingUser = await sql`
@@ -12,7 +19,9 @@ export async function POST(request: Request) {
     `
 
     if (existingUser.rows.length > 0) {
-      return NextResponse.json({ message: 'User already exists' }, { status: 400 })
+      return NextResponse.json({ 
+        message: 'User already exists' 
+      }, { status: 400 })
     }
 
     // Hash the password
@@ -24,9 +33,13 @@ export async function POST(request: Request) {
       VALUES (${name}, ${email}, ${hashedPassword}, 'user')
     `
 
-    return NextResponse.json({ message: 'User created successfully' }, { status: 201 })
+    return NextResponse.json({ 
+      message: 'User created successfully' 
+    }, { status: 201 })
   } catch (error) {
     console.error('Error creating user:', error)
-    return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 })
+    return NextResponse.json({ 
+      message: 'Internal Server Error' 
+    }, { status: 500 })
   }
 }

@@ -12,6 +12,7 @@ export default function SignUp() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [secretCode, setSecretCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
   const { toast } = useToast()
@@ -20,11 +21,26 @@ export default function SignUp() {
     e.preventDefault()
     setIsLoading(true)
 
+    if (!secretCode.trim()) {
+      toast({
+        title: "Error",
+        description: "Secret code is required",
+        variant: "destructive",
+      })
+      setIsLoading(false)
+      return
+    }
+
     try {
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ 
+          name, 
+          email, 
+          password,
+          secretCode 
+        }),
       })
 
       if (response.ok) {
@@ -57,6 +73,17 @@ export default function SignUp() {
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="secretCode">Secret Code</Label>
+              <Input
+                id="secretCode"
+                type="text"
+                placeholder="Enter your secret code"
+                value={secretCode}
+                onChange={(e) => setSecretCode(e.target.value)}
+                required
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
