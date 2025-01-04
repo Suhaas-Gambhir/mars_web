@@ -12,6 +12,15 @@ const nextConfig = {
       // !! WARN !!
       ignoreBuildErrors: true,
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: '**',
+        },
+      ],
+      dangerouslyAllowSVG: true,
+    },
   };
   
   export default nextConfig;
