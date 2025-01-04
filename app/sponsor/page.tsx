@@ -52,7 +52,7 @@ export default function SponsorPage() {
       setSelectedTier(null)
       setCustomAmount('')
       setEmail('')
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem submitting your request. Please try again.",

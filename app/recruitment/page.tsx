@@ -40,7 +40,7 @@ export default function RecruitmentPage() {
 
       // Reset form
       setFormData({ name: '', email: '', role: '' })
-    } catch (error: unknown) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem submitting your application. Please try again.",

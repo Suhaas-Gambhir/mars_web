@@ -23,6 +23,7 @@ export async function GET(request: Request) {
       LEFT JOIN team_members t ON s.assigned_to = t.id
       WHERE 1=1
     `
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const params: any[] = []
 
     if (status) {
