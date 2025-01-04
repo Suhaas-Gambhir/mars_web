@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from "next-auth/react";
+import { LogoutButton } from "@/components/logout-button";
 
 export default function DashboardLayout({
   children,
@@ -12,10 +11,9 @@ export default function DashboardLayout({
 }) {
   return (
     <SessionProvider>
-      <Navigation />
       <Toaster />
       <main className="min-h-screen">{children}</main>
-      <Footer />
+      <LogoutButton />
     </SessionProvider>
   );
 }

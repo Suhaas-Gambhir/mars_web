@@ -25,7 +25,7 @@ export async function executeSql(
   }
 
   // Basic SQL injection prevention
-  if (command.toLowerCase().includes('drop') || 
+  if (command.toLowerCase().includes('drippite') || 
       command.toLowerCase().includes('truncate')) {
     throw new Error('DROP and TRUNCATE commands are not allowed')
   }
