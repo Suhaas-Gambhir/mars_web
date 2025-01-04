@@ -1,0 +1,21 @@
+.NavigationMenuContent[data-motion="from-start"],
+.NavigationMenuContent[data-motion="from-end"],
+.NavigationMenuContent[data-motion="to-start"],
+.NavigationMenuContent[data-motion="to-end"] {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.NavigationMenuContent a,
+.NavigationMenuContent p {
+  color: white !important;
+}
+
+.NavigationMenuTrigger[data-state="open"] {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-radix-navigation-menu-viewport] {
+  overflow: hidden;
+  border-radius: 6px;
+}
+

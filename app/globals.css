@@ -94,3 +94,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.frosted-glass {
+  @apply backdrop-blur-md bg-background/80 border border-border;
+}
