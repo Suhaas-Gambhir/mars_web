@@ -1,6 +1,8 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
+import { Menu, Instagram } from 'lucide-react'
 
 import { cn } from "@/lib/utils"
 import {
@@ -11,6 +13,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ModeToggle } from "./theme-toggle"
 
 const menuItems = [
   {
@@ -65,32 +71,129 @@ const menuItems = [
   },
 ]
 
+const socialLinks = [
+  {
+    title: "Instagram",
+    href: "https://instagram.com",
+    icon: <Instagram className="h-5 w-5" />,
+  },
+]
+
 export function Navigation() {
+  const [isScrolled, setIsScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <NavigationMenu className="relative z-10 max-w-max flex-1 items-center justify-center">
-      <NavigationMenuList className="relative z-20 flex flex-1 list-none items-center justify-center space-x-1 p-4 bg-white/10 backdrop-blur-md rounded-lg">
-        {menuItems.map((section) => (
-          <NavigationMenuItem key={section.title}>
-            <NavigationMenuTrigger className="bg-transparent data-[state=open]:bg-white/20 text-white">
-              {section.title}
-            </NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-white/10 backdrop-blur-md">
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
-                {section.items.map((item) => (
-                  <ListItem
-                    key={item.title}
-                    title={item.title}
-                    href={item.href}
-                  >
-                    {item.description}
-                  </ListItem>
+    <header
+      className={cn(
+        "sticky top-0 z-40 w-full",
+        "frosted-glass",
+        isScrolled
+          ? "bg-background/80 border-b border-border"
+          : "bg-background/0"
+      )}
+      aria-label="Main"
+      data-orientation="horizontal"
+      dir="ltr"
+    >
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="mx-auto flex h-16 w-full items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            {/* <Icons.logo className="h-6 w-6" /> */}
+            <span className="text-xl font-bold">Macquarie Rover</span>
+          </Link>
+
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList className="flex items-center">
+              {menuItems.map((section) => (
+                <NavigationMenuItem key={section.title}>
+                  <NavigationMenuTrigger className="h-16 flex items-center rounded-md mx-1 py-1 text-sm font-medium transition-colors hover:text-primary focus-visible:text-primary lg:mx-3 lg:pr-0 group">
+                    {section.title}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[30rem] backdrop-blur-sm bg-background/80 rounded-md border border-border">
+                      <ul className="grid w-full gap-3 p-4">
+                        {section.items.map((item) => (
+                          <ListItem key={item.title} title={item.title} href={item.href}>
+                            {item.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          <div className="hidden md:flex items-center space-x-4">
+            {socialLinks.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="text-muted-foreground hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.icon}
+                <span className="sr-only">{item.title}</span>
+              </Link>
+            ))}
+            <ModeToggle />
+          </div>
+
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="inline-flex items-center justify-center rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="backdrop-blur-sm bg-background/80">
+              <div className="flex flex-col space-y-4">
+                {menuItems.map((section) => (
+                  <div key={section.title} className="space-y-3">
+                    <h2 className="text-lg font-semibold">{section.title}</h2>
+                    <div className="space-y-2">
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          className="block text-sm text-muted-foreground transition-colors hover:text-primary"
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  {socialLinks.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.icon}
+                      <span className="sr-only">{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
   )
 }
 
@@ -104,13 +207,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/10 focus:bg-white/10",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none text-white">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-white/70">
+          <div className="text-sm font-medium leading-none text-primary">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
@@ -119,4 +222,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-
