@@ -1,14 +1,19 @@
+import nextra from 'nextra'
+
+const withNextra = nextra({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.jsx'
+})
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: '**',
-        },
-      ],
-      dangerouslyAllowSVG: true,
-    },
-  };
-  
-  export default nextConfig;
+export default withNextra({
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+    dangerouslyAllowSVG: true,
+  },
+});
