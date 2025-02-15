@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Menu, Instagram } from 'lucide-react'
+import { Menu, Instagram, Linkedin } from 'lucide-react'
 
 import { cn } from "@/lib/utils"
 import {
@@ -25,7 +25,7 @@ const menuItems = [
       {
         title: "Our Team",
         href: "/team",
-        description: "Meet the passionate team behind Macquarie Rover.",
+        description: "Meet the passionate team behind MARS.",
       },
       {
         title: "Partners",
@@ -33,24 +33,30 @@ const menuItems = [
         description: "Our valued partners and supporters.",
       },
       {
-        title: "Contact",
-        href: "/contact",
-        description: "Get in touch with us.",
+        title: "Documentation",
+        href: "/docs",
+        description: "Learn more about our projects and initiatives.",
       },
     ],
   },
   {
-    title: "Projects",
+    title: "Competitions",
     items: [
       {
-        title: "Rovers",
-        href: "/rovers",
-        description: "Explore our rover projects and innovations.",
-      },
-      {
-        title: "Competitions",
+        title: "ARCh",
         href: "/competitions",
-        description: "Learn about the competitions we participate in.",
+        description: "Competing in the Australian Rover Challenge.",
+      },
+    ],
+  },
+  {
+    title: "Rovers",
+    items: [
+      {
+        title: "Wally 2025",
+        href: "/rovers",
+        description: "Project 'Wally' is a rover competing in ARCh 2025.",
+        // "Project 'Wally' named after the iconic "Wally's Walk" is a rover competing in ARCh 2025."
       },
     ],
   },
@@ -67,6 +73,11 @@ const menuItems = [
         href: "/sponsor",
         description: "Support our mission and projects.",
       },
+      {
+        title: "Contact Us",
+        href: "/contact",
+        description: "Get in touch with us.",
+      },
     ],
   },
 ]
@@ -74,8 +85,13 @@ const menuItems = [
 const socialLinks = [
   {
     title: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/mq_rover/",
     icon: <Instagram className="h-5 w-5" />,
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/company/macquarie-aerospace-rover-society",
+    icon: <Linkedin className="h-5 w-5" />,
   },
 ]
 
@@ -99,7 +115,7 @@ export function Navigation() {
           <div className="mx-auto flex h-16 w-full items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
               {/* <Icons.logo className="h-6 w-6" /> */}
-              <span className="text-xl font-bold">Macquarie Rover</span>
+              <span className="text-xl font-bold">MARS</span>
             </Link>
 
             <NavigationMenu className="hidden md:flex">
