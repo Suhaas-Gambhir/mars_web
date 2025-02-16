@@ -10,8 +10,8 @@ const subTeams = [
     leads: ["Lead Name 1", "Lead Name 2"]
   },
   {
-    name: "Chassis",
-    description: "The Chassis team focuses on the structural framework of the rover, ensuring durability and mobility across rough terrain. They design and refine the rover’s suspension, drive systems, and body structure to support all subsystems while maintaining optimal weight and stability.",
+    name: "Structures",
+    description: "The Structures team focuses on the structural framework of the rover, ensuring durability and mobility across rough terrain. They design and refine the rover’s suspension, drive systems, and body structure to support all subsystems while maintaining optimal weight and stability.",
     leads: ["Lead Name 3", "Lead Name 4"]
   },
   {
