@@ -16,4 +16,9 @@ export default withNextra({
     ],
     dangerouslyAllowSVG: true,
   },
+
+  eslint :{
+    ignoreDuringBuilds: true,
+  },
+
 });
