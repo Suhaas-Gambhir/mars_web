@@ -21,7 +21,8 @@ export async function middleware(request: NextRequest) {
     '/team',
     '/docs',
     '/rover',
-    '/payload'
+    '/payload',
+    '/comingsoon',
   ]
 
   // Check if the pathname is a public route

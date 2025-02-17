@@ -1,5 +1,5 @@
 export default {
-    logo: <span>MARS Docs</span>,
+    logo: <span>MARS</span>,
     project: {
       link: 'https://github.com/Macquarie-Aerospace-Rover-Society'
     }

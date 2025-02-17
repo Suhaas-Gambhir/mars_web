@@ -2,7 +2,10 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, Instagram, Linkedin } from 'lucide-react'
+// import { Icons } from "@/components/icons"
+import logo from '/public/logo.png'
 
 import { cn } from "@/lib/utils"
 import {
@@ -115,6 +118,7 @@ export function Navigation() {
           <div className="mx-auto flex h-16 w-full items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
               {/* <Icons.logo className="h-6 w-6" /> */}
+              <Image src={logo} alt="MARS Logo" width={48} height={48} />
               <span className="text-xl font-bold">MARS</span>
             </Link>
 
