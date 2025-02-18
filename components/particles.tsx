@@ -16,8 +16,8 @@ const PARTICLE_CONFIG = {
 	DARK_MODE: {
 		COLOR: '255, 255, 255',  // RGB color value for particles in dark mode
 		SIZE: {
-			MIN: 0.2,     // Smaller particles in dark mode for subtle effect
-			MAX: 2.2      // Maximum size slightly larger than MIN for variety
+			MIN: 2,     // Smaller particles in dark mode for subtle effect
+			MAX: 4      // Maximum size slightly larger than MIN for variety
 		},
 	}
 };

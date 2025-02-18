@@ -32,12 +32,12 @@ const menuItems = [
       },
       {
         title: "Partners",
-        href: "/partners",
+        href: "/comingsoon", // "/partners",
         description: "Our valued partners and supporters.",
       },
       {
         title: "Documentation",
-        href: "/docs",
+        href: "/comingsoon", // "/docs",
         description: "Learn more about our projects and initiatives.",
       },
     ],
@@ -73,7 +73,7 @@ const menuItems = [
       },
       {
         title: "Sponsor Us",
-        href: "/sponsor",
+        href: "/comingsoon", // "/sponsor",
         description: "Support our mission and projects.",
       },
       {

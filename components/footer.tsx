@@ -13,11 +13,11 @@ export function Footer() {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Macquarie Rover Team
+              Macquarie Aerospace Rover Society
             </Link>
             . The source code is available on{" "}
             <Link
-              href="#"
+              href="https://github.com/Suhaas-Gambhir/mars_web"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"

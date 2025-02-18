@@ -44,7 +44,7 @@ export function Hero() {
         >
           Welcome to
           <br />
-          Macquarie Rover Team
+          Macquarie Aerospace Rover Society
         </motion.h1>
         <motion.p
           className="mt-4 text-lg text-black/90 dark:text-white/90 sm:text-xl md:text-2xl"
@@ -52,7 +52,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          Building rovers since 2025
+          From Moon to Mars and Beyond.
         </motion.p>
         <motion.div
           className="mt-8"
@@ -60,7 +60,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          <Link href="#about">
+          {/* <Link href="#about"> */}
+          <Link href="/team">
             <InteractiveHoverButton
               className="w-48"
               text="Learn More"
