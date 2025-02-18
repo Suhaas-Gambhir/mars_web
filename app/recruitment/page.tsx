@@ -59,10 +59,10 @@ export default function RecruitmentPage() {
           {/* <p className="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p> */}
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLScb5hJvkbuY9G-8HbKlYQjQwfUZ6nWHEy1yATIGq4_1oDvDnw/viewform?embedded=true"
-            class="w-full h-[calc(200vh-20px)]"
+            className="w-full h-[calc(200vh-20px)]"
             frameBorder="0"
-            marginHeight="0"
-            marginWidth="0">
+            marginHeight={0}
+            marginWidth={0}>
             Loading…
           </iframe>
 
