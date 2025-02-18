@@ -38,34 +38,46 @@ const subTeams = [
 
 export default function TeamPage() {
   return (
-    <div className="container mx-auto py-24">
-      <AnimatedSection>
-        <h1 className="text-4xl font-bold mb-8">Who Are We?</h1>
-        <p className="mb-8">The Macquarie Aerospace Rover Society (MARS) is an exciting, student-led initiative offering a multi-disciplinary experience. Our team is composed of passionate students from various fields, working together to design and develop innovative rover systems. We aim to push the boundaries of exploration while fostering collaboration between engineering, science, and technology disciplines.</p>
-      </AnimatedSection>
-      <AnimatedSection>
-        <h1 className="text-4xl font-bold mb-8">Our Team</h1>
-        <p className="mb-8">Our team brings together students from diverse fields, including engineering, science, and technology, to collaboratively design and develop innovative rover systems. Each sub-team plays a crucial role in advancing our capabilities and pushing the boundaries of exploration.</p>
-      </AnimatedSection>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {subTeams.map((team, index) => (
-          <AnimatedSection key={team.name} delay={index * 0.1}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{team.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{team.description}</p>
-                <p className="mt-4 font-semibold">Leads:</p>
-                <ul className="list-disc list-inside">
-                  {team.leads.map((lead) => (
-                    <li key={lead}>{lead}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+    <div className="bg-gray-100 min-h-screen py-24">
+      <div className="container mx-auto px-4">
+        <AnimatedSection>
+          <h1 className="text-5xl font-bold text-center mb-8">Who Are We?</h1>
+          <p className="text-lg text-center mb-8 max-w-3xl mx-auto">The Macquarie Aerospace Rover Society (MARS) is an exciting, student-led initiative offering a multi-disciplinary experience. Our team is composed of passionate students from various fields, working together to design and develop innovative rover systems. We aim to push the boundaries of exploration while fostering collaboration between engineering, science, and technology disciplines.</p>
+        </AnimatedSection>
+        <AnimatedSection>
+          <h1 className="text-5xl font-bold text-center mb-8">Our Team</h1>
+          <p className="text-lg text-center mb-8 max-w-3xl mx-auto">Our team brings together students from diverse fields, including engineering, science, and technology, to collaboratively design and develop innovative rover systems. Each sub-team plays a crucial role in advancing our capabilities and pushing the boundaries of exploration.</p>
+        </AnimatedSection>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {subTeams.map((team, index) => (
+            <AnimatedSection key={team.name} delay={index * 0.1}>
+              <Card className="hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold">{team.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-gray-700">{team.description}</p>
+                  <p className="mt-4 font-semibold">Leads:</p>
+                  <ul className="list-disc list-inside text-gray-700">
+                    {team.leads.map((lead) => (
+                      <li key={lead}>{lead}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          ))}
+        </div>
+        <div className="flex justify-center mt-12">
+          <AnimatedSection>
+            <a
+              href="/recruitment"
+              className="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition duration-300"
+            >
+              Join Now
+            </a>
           </AnimatedSection>
-        ))}
+        </div>
       </div>
     </div>
   )
