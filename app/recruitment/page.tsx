@@ -19,7 +19,7 @@ export default function RecruitmentPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     try {
       const response = await fetch('/api/team', {
         method: 'POST',
@@ -52,13 +52,22 @@ export default function RecruitmentPage() {
   return (
     <div className="container mx-auto py-24">
       <AnimatedSection>
-        <h1 className="text-4xl font-bold mb-8">Join Our Team</h1>
+        <h1 className="text-4xl font-bold mb-8 ml-8">Join Our Team</h1>
       </AnimatedSection>
       <div className="max-w-3xl mx-auto">
         <AnimatedSection delay={0.1}>
-          <p className="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+          {/* <p className="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p> */}
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScb5hJvkbuY9G-8HbKlYQjQwfUZ6nWHEy1yATIGq4_1oDvDnw/viewform?embedded=true"
+            class="w-full h-[calc(200vh-20px)]"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0">
+            Loading…
+          </iframe>
+
         </AnimatedSection>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {['Engineering', 'Software', 'Design', 'Management'].map((role, index) => (
             <AnimatedSection key={role} delay={0.2 + index * 0.1}>
               <Card>
@@ -71,9 +80,9 @@ export default function RecruitmentPage() {
               </Card>
             </AnimatedSection>
           ))}
-        </div>
-        
-        <AnimatedSection delay={0.6}>
+        </div> */}
+
+        {/* <AnimatedSection delay={0.6}>
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Apply Now</CardTitle>
@@ -121,7 +130,7 @@ export default function RecruitmentPage() {
               </form>
             </CardContent>
           </Card>
-        </AnimatedSection>
+        </AnimatedSection> */}
       </div>
     </div>
   )
