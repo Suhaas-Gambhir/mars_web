@@ -38,7 +38,7 @@ const subTeams = [
 
 export default function TeamPage() {
   return (
-    <div className="bg-gray-100 min-h-screen py-24">
+    <div className="min-h-screen py-24">
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <h1 className="text-5xl font-bold text-center mb-8">Who Are We?</h1>
@@ -56,11 +56,11 @@ export default function TeamPage() {
                   <CardTitle className="text-xl font-semibold">{team.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-gray-700">{team.description}</p>
+                  <p className="text-gray-700 dark:text-neutral-400">{team.description}</p>
                   <p className="mt-4 font-semibold">Leads:</p>
                   <ul className="list-disc list-inside text-gray-700">
                     {team.leads.map((lead) => (
-                      <li key={lead}>{lead}</li>
+                      <li key={lead} className="text-gray-700 dark:text-neutral-400">{lead}</li>
                     ))}
                   </ul>
                 </CardContent>
