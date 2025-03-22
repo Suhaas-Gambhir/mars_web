@@ -57,12 +57,12 @@ export default function TeamPage() {
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-gray-700 dark:text-neutral-400">{team.description}</p>
-                  <p className="mt-4 font-semibold">Leads:</p>
+                  {/* <p className="mt-4 font-semibold">Leads:</p>
                   <ul className="list-disc list-inside text-gray-700">
                     {team.leads.map((lead) => (
                       <li key={lead} className="text-gray-700 dark:text-neutral-400">{lead}</li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </CardContent>
               </Card>
             </AnimatedSection>

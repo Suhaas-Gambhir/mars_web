@@ -5,6 +5,8 @@ import InteractiveHoverButton from "./ui/interactive-hover-button";
 import { useRef } from "react";
 import Particles from "./particles";
 import Link from "next/link";
+import Image from "next/image";
+import mrover from "@/public/minirover_sketch.png"
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,6 +18,7 @@ export function Hero() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+  const roverY = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
 
   return (
     <div
@@ -29,6 +32,7 @@ export function Hero() {
         ease={50}
       />
       <div className="absolute inset-0 z-20 bg-gradient-to-t from-background to-background/60 dark:from-background dark:to-background/60" />
+      <div className="flex justify-between items-center">
       <motion.div
         className="relative z-30 mx-auto max-w-5xl text-center"
         style={{ y: textY }}
@@ -69,6 +73,21 @@ export function Hero() {
           </Link>
         </motion.div>
       </motion.div>
+      <motion.div 
+        className="relative z-30 mx-auto max-w-5xl text-center"
+        style={{ y: roverY }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Image
+          src={mrover}
+          alt="Background"
+          objectFit="contain"
+          quality={100}
+        />
+      </motion.div>
+      </div>
     </div>
   );
 }
