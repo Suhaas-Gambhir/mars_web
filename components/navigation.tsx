@@ -31,6 +31,11 @@ const menuItems = [
         description: "Meet the passionate team behind MARS.",
       },
       {
+        title: "Events",
+        href: "/events",
+        description: "Join our upcoming events.",
+      },
+      {
         title: "Partners",
         href: "/comingsoon", // "/partners",
         description: "Our valued partners and supporters.",
