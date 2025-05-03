@@ -23,6 +23,7 @@ export async function middleware(request: NextRequest) {
     '/rover',
     '/payload',
     '/comingsoon',
+    '/events'
   ]
 
   // Check if the pathname is a public route
