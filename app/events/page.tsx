@@ -15,8 +15,10 @@ async function fetchCalendarEvents(): Promise<CalendarEvent[]> {
     throw new Error("Missing Google Calendar ID or API Key.");
   }
 
+  const now = new Date().toISOString();
+
   const res = await fetch(
-    `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&orderBy=startTime&singleEvents=true`,
+    `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${now}`,
     { cache: "no-store" }
   );
   if (!res.ok) {
