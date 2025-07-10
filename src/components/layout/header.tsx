@@ -58,7 +58,7 @@ export function Header() {
         </div>
         <div className="hidden md:flex items-center space-x-4">
         <Button 
-          onClick={() => window.open('https://www.instagram.com/mqrover/', '_blank')} 
+          onClick={() => window.open('https://www.instagram.com/mq_rover/', '_blank')} 
           variant="ghost" 
           size="icon"
           aria-label="Follow us on Instagram"
@@ -67,7 +67,7 @@ export function Header() {
             <Instagram />
           </Button>
           <Button 
-            onClick={() => window.open('https://www.linkedin.com/company/mqrover/', '_blank')} 
+            onClick={() => window.open('https://www.linkedin.com/company/macquarie-aerospace-rover-society/', '_blank')} 
             variant="ghost" 
             size="icon"
             aria-label="Follow us on LinkedIn"
