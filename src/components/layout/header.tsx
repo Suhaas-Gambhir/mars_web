@@ -32,25 +32,37 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-6">
               <Link 
                 href="/" 
-                className="text-xl font-normal transition-colors hover:text-primary"
+                className="text-2xl font-normal transition-colors hover:text-primary"
               >
-                About Us
+                Home
+              </Link>
+              <Link 
+                href="/team" 
+                className="text-2xl font-normal transition-colors hover:text-primary" 
+              >
+                Team
               </Link>
               <Link 
                 href="/events" 
-                className="text-xl font-normal transition-colors hover:text-primary"
+                className="text-2xl font-normal transition-colors hover:text-primary" 
               >
                 Events
               </Link>
               <Link 
+                href="/sponsors" 
+                className="text-2xl font-normal transition-colors hover:text-primary" 
+              >
+                Sponsors Us
+              </Link> 
+              <Link 
                 href="/blog" 
-                className="text-xl font-normal transition-colors hover:text-primary"
+                className="text-2xl font-normal transition-colors hover:text-primary"
               >
                 Blog
               </Link>
               <Link 
                 href="/contact" 
-                className="text-xl font-normal transition-colors hover:text-primary"
+                className="text-2xl font-normal transition-colors hover:text-primary"
               >
                 Contact
               </Link>
@@ -106,7 +118,14 @@ export function Header() {
               className="block text-lg font-medium transition-colors hover:text-primary py-2"
               onClick={closeMenu}
             >
-              About Us
+              Home
+            </Link>
+            <Link 
+              href="/team" 
+              className="block text-lg font-medium transition-colors hover:text-primary py-2"
+              onClick={closeMenu}
+            >
+              Team
             </Link>
             <Link 
               href="/events" 
@@ -114,6 +133,13 @@ export function Header() {
               onClick={closeMenu}
             >
               Events
+            </Link>
+            <Link 
+              href="/sponsors" 
+              className="block text-lg font-medium transition-colors hover:text-primary py-2"
+              onClick={closeMenu}
+            >
+              Sponsors Us
             </Link>
             <Link 
               href="/blog" 

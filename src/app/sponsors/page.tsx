@@ -364,22 +364,26 @@ export default function SponsorsPage() {
                   See how your sponsorship helps our community grow
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                  <div className="text-3xl font-bold text-primary mb-1">20+</div>
                   <p className="text-sm text-muted-foreground">Active Members</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                  <div className="text-3xl font-bold text-primary mb-1">5+</div>
                   <p className="text-sm text-muted-foreground">Events Hosted</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">25+</div>
-                  <p className="text-sm text-muted-foreground">Partners</p>
+                  <div className="text-3xl font-bold text-primary mb-1">5</div>
+                  <p className="text-sm text-muted-foreground">Industry Partners</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">95%</div>
-                  <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
+                  <div className="text-3xl font-bold text-primary mb-1">10+</div>
+                  <p className="text-sm text-muted-foreground">University Disciplines Represented</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                  <p className="text-sm text-muted-foreground">Events Attended </p>
                 </div>
               </div>
             </CardContent>

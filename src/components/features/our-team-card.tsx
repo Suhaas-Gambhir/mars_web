@@ -1,5 +1,51 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Globe, Linkedin } from "lucide-react"
+import Image from "next/image"
+
+export interface TeamMember {
+  name: string;
+  position?: string;
+  image: string;
+  linkedin?: string;
+  website?: string;
+}
+
+export function TeamMemberCard({ member }: { member: TeamMember }) {
+  return (
+    <div className="flex flex-col items-center bg-background/70 rounded-lg p-8 shadow-md">
+      <div className="w-44 h-44 mb-5 relative">
+        <Image
+          src={member.image}
+          alt={member.name}
+          width={176}
+          height={176}
+          className="rounded-3xl object-cover w-full h-full border-4 border-white"
+        />
+      </div>
+      <div className="text-center">
+        <div className="font-bold text-2xl text-white mb-2">{member.name}</div>
+        <div className="text-lg text-muted-foreground mb-3">{member.position}</div>
+        <div className="flex justify-center gap-2">
+          {member.linkedin && (
+            <Button asChild variant="ghost" size="icon" aria-label="LinkedIn">
+              <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5" />
+              </Link>
+            </Button>
+          )}
+          {member.website && (
+            <Button asChild variant="ghost" size="icon" aria-label="Website">
+              <Link href={member.website} target="_blank" rel="noopener noreferrer">
+                <Globe className="w-5 h-5" /> 
+              </Link>
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export function OurTeamCard() { 
   return (

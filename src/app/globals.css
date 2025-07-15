@@ -98,6 +98,6 @@
     @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
   html {
-    font-size: clamp(10.4px, 0.65vw, 16px);
+    font-size: clamp(10.4px, 0.65vw, 14px);
   }
 }
