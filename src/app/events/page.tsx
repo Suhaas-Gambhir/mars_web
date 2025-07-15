@@ -88,7 +88,7 @@ export default function EventsPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <Badge 
                       variant={event.isNextWeek ? "default" : "secondary"}
-                      className="text-xs"
+                      className="text-xs text-white"
                     >
                       {event.isNextWeek ? "Next Week" : "Upcoming"}
                     </Badge>
@@ -107,13 +107,6 @@ export default function EventsPage() {
                 </div>
               ))}
             </div>
-            {nextThreeWeeksEvents.length > 3 && (
-              <div className="mt-4 text-center">
-                <Button variant="outline" size="sm">
-                  View All Upcoming Events
-                </Button>
-              </div>
-            )}
           </div>
         </div>
       )}

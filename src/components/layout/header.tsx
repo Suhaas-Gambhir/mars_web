@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Menu, X, Instagram, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { ThemeToggle } from "@/components/theme/theme-toggle"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -87,6 +88,7 @@ export function Header() {
           >
             <Linkedin />
           </Button>
+          <ThemeToggle />
           <Button asChild>
               <Link href="/join">Join Now</Link>
             </Button> 
@@ -183,6 +185,7 @@ export function Header() {
                   <Linkedin />
                 </Button>
               </div>
+              <ThemeToggle />
               <Button asChild className="w-1/2">
                 <Link href="/join" onClick={closeMenu}>Join Now</Link>
               </Button>

@@ -33,7 +33,7 @@ export function EventListView({ events }: EventListViewProps) {
               {/* Event Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary" className="text-xs">{event.category}</Badge>
+                  <Badge variant="secondary" className="text-xs text-white">{event.category}</Badge>
                   <span className="text-xs font-semibold text-primary">{event.price}</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{event.title}</h3>

@@ -21,11 +21,11 @@ export function ProjectsCard() {
       <div className="absolute inset-0 bg-background/50" />
       <div className="absolute inset-0 bg-gradient-to-bl from-background/30 via-transparent to-primary/20" />
       <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 border border-white/20 p-20 bg-gradient-to-bl from-background/10 via-transparent to-primary/2">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 border rounded-2xl border-white/20 p-20 bg-gradient-to-bl from-background/10 via-transparent to-primary/20 dark:bg-gradient-to-bl dark:from-background/10 dark:via-transparent dark:to-primary/20">
           {/* Projects Content */}
           <div className="flex-1">
             <div className="mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-black dark:text-white">
                 Projects
               </h2>
             </div>
@@ -44,10 +44,10 @@ export function ProjectsCard() {
                         className="w-full h-full rounded-lg object-cover"
                       />
                     </div>
-                    <CardTitle className="text-3xl sm:text-4xl text-white line-clamp-2">
+                    <CardTitle className="text-3xl sm:text-4xl dark:text-white text-black line-clamp-2">
                       {project.title}
                     </CardTitle>
-                    <CardDescription className="text-white line-clamp-3 text-xl">
+                    <CardDescription className="text-muted-foreground line-clamp-3 text-xl">
                       {project.description}
                     </CardDescription>
                   </CardHeader>

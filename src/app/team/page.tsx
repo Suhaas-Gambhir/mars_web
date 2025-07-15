@@ -40,7 +40,6 @@ const marsTeamMembers: TeamMember[] = [
   {
     name: 'Lewis Reeves',
     image: '/image-placeholder.png',
-    linkedin: 'https://linkedin.com/in/evemartinez',
   },
   {
     name: 'Oliver Nicholson',

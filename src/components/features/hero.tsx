@@ -10,8 +10,8 @@ export function Hero() {
           backgroundImage: "url('/hero-bg.png')",
         }}
       />
-      <div className="absolute inset-0 bg-background/50" />
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 via-transparent to-primary/10" />
+      <div className="absolute inset-0 bg-background/10 dark:bg-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 via-transparent to-primary/10 dark:bg-gradient-to-r dark:from-secondary/10 dark:via-transparent dark:to-primary/10" />
       <div className="container relative z-10">
         <div className="text-start space-y-8 justify-start max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">

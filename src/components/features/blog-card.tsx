@@ -13,7 +13,7 @@ export function BlogCard({ post }: BlogCardProps) {
     <Card className="h-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between mb-2">
-          <Badge variant="secondary" className="text-xs">{post.category}</Badge>
+          <Badge variant="secondary" className="text-xs text-white">{post.category}</Badge>
           <span className="text-xs sm:text-sm text-muted-foreground">{post.readTime}</span>
         </div>
         <CardTitle className="text-lg sm:text-xl line-clamp-2">{post.title}</CardTitle>

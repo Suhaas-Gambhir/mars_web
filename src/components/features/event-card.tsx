@@ -14,7 +14,7 @@ export function EventCard({ event, showActions = true }: EventCardProps) {
     <Card className="h-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-4">
       <div className="flex items-center justify-between mb-2">
-          <Badge variant="secondary" className="text-xs">{event.category}</Badge>
+          <Badge variant="secondary" className="text-xs text-white">{event.category}</Badge>
           <span className="text-xs sm:text-sm font-semibold text-primary">{event.price}</span>
         </div>
         <CardTitle className="text-lg sm:text-xl line-clamp-2">{event.title}</CardTitle>

@@ -4,8 +4,8 @@ import Link from "next/link";
 export function FeaturesGrid() {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden h-[50rem]">
-      <div className="absolute inset-0 bg-background/95" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-primary/30" />
+      <div className="absolute inset-0 bg-background/20 dark:bg-background/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-primary/30 dark:bg-gradient-to-r dark:from-background/30 dark:via-transparent dark:to-primary/30" />
       <div className="container relative z-10">
         <div className="text-start mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl lg:leading-[1.2] font-bold mb-4 max-w-xl">
