@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ProcessedEvent } from "@/lib/google-calendar"
 import { API_ENDPOINTS } from "@/lib/constants"
+import { formatSydneyTimeRange } from '@/lib/utils/date-utils';
 
 export default function EventsPage() {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming')
@@ -101,7 +102,9 @@ export default function EventsPage() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
-                      <span>{event.time}</span>
+                      <span>
+                        {formatSydneyTimeRange(event.startDate, event.endDate)}
+                      </span>
                     </div>
                   </div>
                 </div>

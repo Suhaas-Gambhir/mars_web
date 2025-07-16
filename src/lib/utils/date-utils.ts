@@ -135,3 +135,42 @@ export function getRelativeTimeString(date: Date): string {
   
   return formatDateForDisplay(date)
 } 
+
+export function formatSydneyTimeRange(startDate: Date | string, endDate: Date | string) {
+  const sydneyTz = 'Australia/Sydney';
+
+  // Convert to Date objects if they're strings
+  const start = typeof startDate === 'string' ? new Date(startDate) : startDate;
+  const end = typeof endDate === 'string' ? new Date(endDate) : endDate;
+
+  // Ensure we have valid Date objects
+  if (!(start instanceof Date) || isNaN(start.getTime())) {
+    console.error('Invalid startDate provided to formatSydneyTimeRange:', startDate);
+    return 'Invalid Start Time';
+  }
+  
+  if (!(end instanceof Date) || isNaN(end.getTime())) {
+    console.error('Invalid endDate provided to formatSydneyTimeRange:', endDate);
+    return 'Invalid End Time';
+  }
+
+  // If start and end are on the same day, show as "11:00 AM - 2:00 PM"
+  // Otherwise, show as "23 Jul 2025, 11:00 AM - 24 Jul 2025, 2:00 PM"
+  const sameDay =
+    start.toLocaleDateString('en-AU', { timeZone: sydneyTz }) ===
+    end.toLocaleDateString('en-AU', { timeZone: sydneyTz });
+
+  if (sameDay) {
+    return (
+      start.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: sydneyTz }) +
+      ' - ' +
+      end.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: sydneyTz })
+    );
+  } else {
+    return (
+      start.toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: sydneyTz }) +
+      ' - ' +
+      end.toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: sydneyTz })
+    );
+  }
+}

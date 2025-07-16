@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { ProcessedEvent } from "@/lib/google-calendar"
 import { EventActions } from "./event-actions"
+import { formatSydneyTimeRange } from "@/lib/utils/date-utils"
 
 interface EventListViewProps {
   events: ProcessedEvent[]
@@ -45,7 +46,7 @@ export function EventListView({ events }: EventListViewProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    <span>{event.time}</span>
+                    <span>{formatSydneyTimeRange(event.startDate, event.endDate)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />

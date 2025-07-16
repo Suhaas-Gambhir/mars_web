@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ProcessedEvent } from "@/lib/google-calendar"
 import { EventActions } from "./event-actions"
 import { Badge } from "@/components/ui/badge"
+import { formatSydneyTimeRange } from "@/lib/utils/date-utils"
 
 interface EventCardProps {
   event: ProcessedEvent
@@ -27,7 +28,7 @@ export function EventCard({ event, showActions = true }: EventCardProps) {
         </div>
         <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
           <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-          {event.time}
+          {formatSydneyTimeRange(event.startDate, event.endDate)}
         </div>
         <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
           <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />

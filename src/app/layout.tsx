@@ -29,7 +29,7 @@ export const metadata = {
     siteName: "MARS",
     images: [
       {
-        url: "/mars.png",
+        url: "https://www.mqrover.space/mars-image.png",
         width: 512,
         height: 512,
         alt: "MARS Logo"
