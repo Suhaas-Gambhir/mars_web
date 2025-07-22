@@ -31,10 +31,14 @@ export default function ContactPage() {
     setSubmitStatus('idle')
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // TODO: Send form data to backend
-      
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error('Failed to send message')
+
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {

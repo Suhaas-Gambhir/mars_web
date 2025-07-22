@@ -27,7 +27,6 @@ export function UpcomingEventsBanner() {
     async function fetchUpcomingEvents() {
       try {
         const response = await fetch(API_ENDPOINTS.EVENTS_NEXT_THREE_WEEKS)
-        console.log(response)
         const result = await response.json()
         
         if (result.success) {
