@@ -85,6 +85,7 @@ export default function JoinUsPage() {
       })
     } catch (error) {
       setSubmitStatus('error')
+      console.error(error)
     } finally {
       setIsSubmitting(false)
     }
