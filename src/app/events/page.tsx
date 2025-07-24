@@ -44,7 +44,7 @@ export default function EventsPage() {
 
   if (currentLoading) {
     return (
-      <div className="container py-12 sm:py-16 lg:py-20">
+      <div className="container py-12  lg:py-20">
         <div className="flex items-center justify-center">
           <Loader2 className="h-8 w-8 animate-spin" />
         </div>
@@ -54,7 +54,7 @@ export default function EventsPage() {
 
   if (currentError) {
     return (
-      <div className="container py-12 sm:py-16 lg:py-20">
+      <div className="container py-12  lg:py-20">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-destructive">Error</h1>
           <p className="text-muted-foreground">{currentError}</p>
@@ -64,7 +64,7 @@ export default function EventsPage() {
   }
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Events</h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">

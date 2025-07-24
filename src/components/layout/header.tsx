@@ -67,6 +67,12 @@ export function Header() {
               >
                 Contact
               </Link>
+              <Link 
+                href="/about" 
+                className="text-2xl font-normal transition-colors hover:text-primary"
+              >
+                About
+              </Link>
           </nav>
         </div>
         <div className="hidden md:flex items-center space-x-4">
@@ -163,6 +169,13 @@ export function Header() {
               onClick={closeMenu}
             >
               Contact
+            </Link>
+            <Link 
+              href="/about" 
+              className="block text-lg font-medium transition-colors hover:text-primary py-2"
+              onClick={closeMenu}
+            >
+              About
             </Link>
             <div className="pt-4 border-t flex flex-row items-center justify-between space-y-4">
               <div className="flex items-center space-x-2">

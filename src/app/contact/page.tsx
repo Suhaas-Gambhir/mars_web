@@ -50,7 +50,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

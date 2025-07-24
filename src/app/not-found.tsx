@@ -6,7 +6,7 @@ import { Home, ArrowLeft } from "lucide-react"
 
 export default function NotFound() {
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container py-12  lg:py-20">
       <div className="text-center max-w-md mx-auto px-4">
         <div className="mb-8">
           <h1 className="text-6xl sm:text-8xl font-bold text-muted-foreground mb-4">404</h1>

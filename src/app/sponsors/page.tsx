@@ -27,6 +27,7 @@ export default function SponsorsPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -36,22 +37,39 @@ export default function SponsorsPage() {
     }))
   }
 
+  const validate = () => {
+    const errors: { [key: string]: string } = {}
+    if (!formData.name || formData.name.length < 2) errors.name = 'Name is required.'
+    if (!formData.email || !/^\S+@\S+\.\S+$/.test(formData.email)) errors.email = 'Valid email is required.'
+    if (!formData.company || formData.company.length < 2) errors.company = 'Company is required.'
+    if (!formData.message || formData.message.length < 5) errors.message = 'Message must be at least 5 characters.'
+    return errors
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setSubmitStatus('idle')
-
+    const errors = validate()
+    setFormErrors(errors)
+    if (Object.keys(errors).length > 0) {
+      setIsSubmitting(false)
+      return
+    }
+    setIsSubmitting(true)
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      // TODO: Send the data to the backend
-      
+      const res = await fetch('/api/sponsors', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, selected_tier: selectedTier })
+      })
+      if (!res.ok) throw new Error('Failed to submit')
       setSubmitStatus('success')
       setFormData({ name: '', email: '', company: '', message: '' })
       setSelectedTier(null)
+      setFormErrors({})
     } catch (error) {
-      console.error('Error submitting form:', error)
       setSubmitStatus('error')
+      console.error('Error submitting form:', error)
     } finally {
       setIsSubmitting(false)
     }
@@ -126,7 +144,7 @@ export default function SponsorsPage() {
   ]
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -275,6 +293,7 @@ export default function SponsorsPage() {
                         onChange={handleInputChange}
                         required
                       />
+                      {formErrors.name && <p className="text-red-600 text-xs mt-1">{formErrors.name}</p>}
                     </div>
                     
                     <div className="space-y-2">
@@ -288,6 +307,7 @@ export default function SponsorsPage() {
                         onChange={handleInputChange}
                         required
                       />
+                      {formErrors.email && <p className="text-red-600 text-xs mt-1">{formErrors.email}</p>}
                     </div>
                   </div>
                   
@@ -302,6 +322,7 @@ export default function SponsorsPage() {
                       onChange={handleInputChange}
                       required
                     />
+                    {formErrors.company && <p className="text-red-600 text-xs mt-1">{formErrors.company}</p>}
                   </div>
                   
                   <div className="space-y-2">
@@ -315,6 +336,7 @@ export default function SponsorsPage() {
                       rows={4}
                       required
                     />
+                    {formErrors.message && <p className="text-red-600 text-xs mt-1">{formErrors.message}</p>}
                   </div>
                   
                   {selectedTier && (

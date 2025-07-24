@@ -24,48 +24,81 @@ const executiveTeam: TeamMember[] = [
 const projectLeadership: TeamMember[] = [
   {
     name: 'Suhaas Gambhir',
-    position: 'Rover Lead',
-    image: '/image-placeholder.png',
+    position: 'Software Co-Lead (Project Wally)',
+    image: '/suhaas-gambhir.jpeg',
     linkedin: 'https://www.linkedin.com/in/suhaasgambhir/',
   },
   {
-    name: 'Suhaas Gambhir',
-    position: 'Robotic Arm',
+    name: 'Adrian Kane',
+    position: 'Software Co-Lead & Electrical Lead (Project Wally)',
+    image: '/adrian-kane.png',
+  },
+  {
+    name: 'Bailey Nann',
+    image: '/bailey-nann.jpeg',
+    position: 'Structures Lead (Project Wally)',
+    linkedin: 'https://www.linkedin.com/in/bailey-nann/',
+  },
+  {
+    name: 'Jay',
     image: '/image-placeholder.png',
-    linkedin: 'https://www.linkedin.com/in/suhaasgambhir/',
+    position: 'Team Lead (Robotic Arm)',
   },
 ];
 
 const marsTeamMembers: TeamMember[] = [
   {
-    name: 'Lewis Reeves',
-    image: '/image-placeholder.png',
-  },
-  {
-    name: 'Oliver Nicholson',
-    image: '/image-placeholder.png',
+    name: 'Aaron Kokkonen',
+    image: '/aaron-kokkonen.jpeg',
+    linkedin: 'https://www.linkedin.com/in/aaron-kokkonen/',
+    position: 'Chassis Team',
   },
   {
     name: 'Anushka Saha',
-    image: '/image-placeholder.png',
+    image: '/anushka-saha.jpeg',
+    linkedin: 'https://www.linkedin.com/in/anushka-saha-b9925626b/',
+    position: 'Chassis Team',
   },
   {
-    name: 'Min You',
-    image: '/image-placeholder.png',
-  },
-  {
-    name: 'Aaron Kokkonen',
-    image: '/image-placeholder.png',
+    name: 'Lewis Reeves',
+    image: '/lewis-reeves.jpeg',
+    linkedin: 'https://www.linkedin.com/in/lewisreeves/',
+    position: 'Chassis Team',
   },
   {
     name: 'Maxwell Gordon',
     image: '/image-placeholder.png',
+    position: 'Chassis Team',
+  },
+  {
+    name: 'Min You',
+    image: '/min-you.jpeg',
+    linkedin: 'https://www.linkedin.com/in/youm05/',
+    position: 'Administration & Marketing, 📷',
+  },
+  {
+    name: 'Oliver Nicholson',
+    image: '/oliver-nicholson.jpeg',
+    linkedin: 'https://www.linkedin.com/in/oliver-nicholson-5b3a83255/',
+    position: 'Chassis Team',
+  },
+  {
+    name: 'Rhoj Gutierrez',
+    image: '/rhoj-gutierrez.jpeg',
+    linkedin: 'https://www.linkedin.com/in/rhoj-gutierrez-24b64423a/',
+    position: 'Social Media Coordinator & Marketing',
+  },
+  {
+    name: 'Vikram Vibhav',
+    image: '/vikram-vibhav.jpeg',
+    linkedin: 'https://www.linkedin.com/in/vikramvaibhav/',
+    position: 'Website',
   },
 ];
 
 export default function TeamPage() {
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our 2025 - 2026 Team</h1> 
       </div>

@@ -138,7 +138,7 @@ export default function ColorsPage() {
 
   if (!isMounted) {
     return (
-      <div className="container py-12 sm:py-16 lg:py-20">
+      <div className="container py-12  lg:py-20">
         <div className="text-center">
           <div className="animate-pulse">
             <div className="h-8 bg-muted rounded mb-4"></div>
@@ -150,7 +150,7 @@ export default function ColorsPage() {
   }
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container py-12  lg:py-20">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Palette className="w-6 h-6 text-primary" />

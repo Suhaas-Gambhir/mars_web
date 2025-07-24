@@ -15,7 +15,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const content = await compileMDXContent(post.content)
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20 px-4 sm:px-0">
+    <div className="container  mt-5">
       <article className="max-w-4xl mx-auto">
         <header className="mb-8 sm:mb-12">
           <div className="flex items-center gap-2 mb-4">

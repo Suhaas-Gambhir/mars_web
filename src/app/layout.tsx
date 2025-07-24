@@ -56,8 +56,8 @@ export default function RootLayout({
           defaultTheme="dark"
         >
           <div className="min-h-screen bg-background">
-            <UpcomingEventsBanner />
             <Header />
+            <UpcomingEventsBanner />
             <main>
               {children}
             </main>

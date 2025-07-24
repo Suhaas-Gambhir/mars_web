@@ -92,7 +92,7 @@ export default function JoinUsPage() {
   }
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Expression of Interest (EOI)</h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -308,6 +308,12 @@ export default function JoinUsPage() {
             </CardContent>
           </Card>
         </div>
+
+      {/* FAQ Section */}
+      <div className="max-w-4xl mx-auto mt-16 text-center">
+        <p className="text-lg">Still have questions?</p>
+        <a href="/faq" className="inline-block mt-2 px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary/80 transition">Read our FAQ</a>
+      </div>
     </div>
   )
 } 

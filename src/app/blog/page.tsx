@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const posts = await getMDXPosts()
 
   return (
-    <div className="container py-12 sm:py-16 lg:py-20">
+    <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Blog</h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
