@@ -32,12 +32,6 @@ export function Header() {
         <div className="hidden md:flex items-center space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
               <Link 
-                href="/" 
-                className="text-2xl font-normal transition-colors hover:text-primary"
-              >
-                Home
-              </Link>
-              <Link 
                 href="/team" 
                 className="text-2xl font-normal transition-colors hover:text-primary" 
               >
@@ -48,12 +42,6 @@ export function Header() {
                 className="text-2xl font-normal transition-colors hover:text-primary" 
               >
                 Events
-              </Link>
-              <Link 
-                href="/sponsors" 
-                className="text-2xl font-normal transition-colors hover:text-primary" 
-              >
-                Sponsors Us
               </Link> 
               <Link 
                 href="/blog" 
@@ -72,6 +60,18 @@ export function Header() {
                 className="text-2xl font-normal transition-colors hover:text-primary"
               >
                 About
+              </Link>
+              <Link 
+                href="/gallery" 
+                className="text-2xl font-normal transition-colors hover:text-primary"
+              >
+                Gallery
+              </Link>
+              <Link 
+                href="/sponsors" 
+                className="text-2xl font-normal transition-colors hover:text-primary" 
+              >
+                Sponsors Us
               </Link>
           </nav>
         </div>
@@ -122,13 +122,6 @@ export function Header() {
         <div className="md:hidden border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <nav className="container py-4 space-y-4">
             <Link 
-              href="/" 
-              className="block text-lg font-medium transition-colors hover:text-primary py-2"
-              onClick={closeMenu}
-            >
-              Home
-            </Link>
-            <Link 
               href="/team" 
               className="block text-lg font-medium transition-colors hover:text-primary py-2"
               onClick={closeMenu}
@@ -141,13 +134,6 @@ export function Header() {
               onClick={closeMenu}
             >
               Events
-            </Link>
-            <Link 
-              href="/sponsors" 
-              className="block text-lg font-medium transition-colors hover:text-primary py-2"
-              onClick={closeMenu}
-            >
-              Sponsors Us
             </Link>
             <Link 
               href="/blog" 
@@ -176,6 +162,20 @@ export function Header() {
               onClick={closeMenu}
             >
               About
+            </Link>
+            <Link 
+              href="/gallery" 
+              className="block text-lg font-medium transition-colors hover:text-primary py-2"
+              onClick={closeMenu}
+            >
+              Gallery
+            </Link>
+            <Link 
+              href="/sponsors" 
+              className="block text-lg font-medium transition-colors hover:text-primary py-2"
+              onClick={closeMenu}
+            >
+              Sponsors Us
             </Link>
             <div className="pt-4 border-t flex flex-row items-center justify-between space-y-4">
               <div className="flex items-center space-x-2">

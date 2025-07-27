@@ -257,6 +257,8 @@ export default function JoinUsPage() {
                     <p className="text-green-800 text-sm">
                       Thank you! Your expression of interest has been submitted successfully.
                     </p>
+                    <a href="https://discord.gg/QMqZfTHYAH" className="text-blue-500 text-sm">Click here to join our Discord server.</a>
+                    <p className="text-sm">https://discord.gg/QMqZfTHYAH</p>
                   </div>
                 )}
                 {submitStatus === 'error' && (

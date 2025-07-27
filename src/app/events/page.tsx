@@ -66,7 +66,7 @@ export default function EventsPage() {
   return (
     <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">Events</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Events</h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
           Discover amazing MARS events.
         </p>

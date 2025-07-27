@@ -144,7 +144,7 @@ export default function SponsorsPage() {
   ]
 
   return (
-    <div className="container  mt-5">
+    <div className="container mt-5">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -155,6 +155,41 @@ export default function SponsorsPage() {
           </p>
         </div>
 
+    {/* Stats Section */}
+    <div className="mt-16 mb-16">
+          <Card>
+            <CardContent className="pt-8 pb-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold mb-2">Our Impact</h2>
+                <p className="text-muted-foreground">
+                  See how your sponsorship helps our community grow
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">20+</div>
+                  <p className="text-sm text-muted-foreground">Active Members</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">5+</div>
+                  <p className="text-sm text-muted-foreground">Events Hosted</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">5</div>
+                  <p className="text-sm text-muted-foreground">Industry Partners</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">10+</div>
+                  <p className="text-sm text-muted-foreground">University Disciplines Represented</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                  <p className="text-sm text-muted-foreground">Events Attended </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
         {/* Why Sponsor Section */}
         <div className="mb-16">
           <Card>
@@ -271,7 +306,7 @@ export default function SponsorsPage() {
             </Card>
           </div>
 
-          <div>
+          <div className="mb-16">
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Inquiry Form</CardTitle>
@@ -374,42 +409,6 @@ export default function SponsorsPage() {
               </CardContent>
             </Card>
           </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-16">
-          <Card>
-            <CardContent className="pt-8 pb-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-2">Our Impact</h2>
-                <p className="text-muted-foreground">
-                  See how your sponsorship helps our community grow
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">20+</div>
-                  <p className="text-sm text-muted-foreground">Active Members</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">5+</div>
-                  <p className="text-sm text-muted-foreground">Events Hosted</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">5</div>
-                  <p className="text-sm text-muted-foreground">Industry Partners</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">10+</div>
-                  <p className="text-sm text-muted-foreground">University Disciplines Represented</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
-                  <p className="text-sm text-muted-foreground">Events Attended </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

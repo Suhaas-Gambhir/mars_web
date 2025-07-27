@@ -8,7 +8,7 @@ export default async function BlogPage() {
   return (
     <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">Blog</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Blog</h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
           Stay updated with the latest insights, tutorials, and industry trends from expert writers and thought leaders.
         </p>

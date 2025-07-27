@@ -71,16 +71,24 @@ const marsTeamMembers: TeamMember[] = [
     position: 'Chassis Team',
   },
   {
-    name: 'Min You',
-    image: '/team/min-you.jpeg',
-    linkedin: 'https://www.linkedin.com/in/youm05/',
-    position: 'Administration & Marketing, 📷',
+    name: 'Noah',
+    image: '/team/image-placeholder.png',
+    position: 'Chassis Team',
   },
   {
     name: 'Oliver Nicholson',
     image: '/team/oliver-nicholson.jpeg',
     linkedin: 'https://www.linkedin.com/in/oliver-nicholson-5b3a83255/',
     position: 'Chassis Team',
+  }
+];
+
+const operationsTeam: TeamMember[] = [
+  {
+    name: 'Min You',
+    image: '/team/min-you.jpeg',
+    linkedin: 'https://www.linkedin.com/in/youm05/',
+    position: 'Administration & Marketing, 📷',
   },
   {
     name: 'Rhoj Gutierrez',
@@ -100,7 +108,7 @@ export default function TeamPage() {
   return (
     <div className="container  mt-5">
       <div className="text-center mb-12 sm:mb-16 px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our 2025 - 2026 Team</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Meet Our 2025 - 2026 Team</h1>
       </div>
       {/* Executive Team */}
       <section className="mb-16 text-center">
@@ -122,8 +130,18 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* Operations Team */}
+      <section className="mb-16 text-center">
+        <h2 className="text-2xl text-primary sm:text-3xl font-semibold mb-8">Operations Team</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {operationsTeam.map((member, idx) => (
+            <TeamMemberCard key={idx} member={member} />
+          ))}
+        </div>
+      </section>
+
       {/* MARS Team Members */}
-      <section className="text-center">
+      <section className="mb-16 text-center">
         <h2 className="text-2xl text-primary sm:text-3xl font-semibold mb-8">MARS Team Members</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {marsTeamMembers.map((member, idx) => (
@@ -131,6 +149,6 @@ export default function TeamPage() {
           ))}
         </div>
       </section>
-    </div>
+      </div>
   );
 } 
