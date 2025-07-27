@@ -65,12 +65,12 @@ export function UpcomingEventsBanner() {
   return (
     <div className="w-full z-50 bg-gradient-to-r from-primary/90 to-primary/80 backdrop-blur-sm border-b border-primary/20">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2">
           {/* Event Info */}
-          <div className="flex items-center gap-4 flex-1 min-w-0">
-            <div className="flex items-center gap-2 text-white">
-              <Calendar className="w-6 h-6" />
-              <Badge variant="secondary" className="text-sm text-white">
+          <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+            <div className="flex items-center gap-1 sm:gap-2 text-white flex-shrink-0">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Badge variant="secondary" className="text-xs sm:text-sm text-white">
                 {currentEvent.isNextWeek ? "Next Week" : "Upcoming"}
               </Badge>
             </div>
@@ -79,13 +79,13 @@ export function UpcomingEventsBanner() {
               <h3 className="text-white font-semibold truncate">
                 {currentEvent.title}
               </h3>
-              <div className="flex items-center gap-4 text-white/80 text-sm">
-                <div className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  <span>{currentEvent.date}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-1 min-w-0">
+                  <Clock className="w-4 h-4 flex-shrink-0" />
+                  <span className="truncate">{currentEvent.date}</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4" />
+                <div className="flex items-center gap-1 min-w-0">
+                  <MapPin className="w-4 h-4 flex-shrink-0" />
                   <span className="truncate">{currentEvent.location}</span>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export function UpcomingEventsBanner() {
           </div>
 
           {/* Navigation and Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             {/* Navigation */}
             {events.length > 1 && (
               <div className="flex items-center gap-1">
@@ -105,7 +105,7 @@ export function UpcomingEventsBanner() {
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </Button>
-                <span className="text-white text-sm">
+                <span className="hidden sm:inline text-white text-sm">
                   {currentEventIndex + 1} / {events.length}
                 </span>
                 <Button
