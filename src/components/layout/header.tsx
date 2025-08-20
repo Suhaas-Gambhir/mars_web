@@ -31,6 +31,12 @@ export function Header() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
+            <Link 
+                href="/about" 
+                className="text-2xl font-normal transition-colors hover:text-primary"
+              >
+                About
+              </Link>
               <Link 
                 href="/team" 
                 className="text-2xl font-normal transition-colors hover:text-primary" 
@@ -49,18 +55,8 @@ export function Header() {
               >
                 Blog
               </Link>
-              <Link 
-                href="/contact" 
-                className="text-2xl font-normal transition-colors hover:text-primary"
-              >
-                Contact
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-2xl font-normal transition-colors hover:text-primary"
-              >
-                About
-              </Link>
+              
+              
               <Link 
                 href="/gallery" 
                 className="text-2xl font-normal transition-colors hover:text-primary"
@@ -72,6 +68,12 @@ export function Header() {
                 className="text-2xl font-normal transition-colors hover:text-primary" 
               >
                 Sponsors Us
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-2xl font-normal transition-colors hover:text-primary"
+              >
+                Contact
               </Link>
           </nav>
         </div>

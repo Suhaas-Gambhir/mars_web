@@ -12,6 +12,22 @@ const projects = [
     image: "/mini-wally.png",
     category: "Prototype",
     status: "In Progress"
+  },
+  {
+    id: "2",
+    title: "Prototype Wally",
+    description: "A full scale prototype made from sheet acrylic and aluminium extrusions to demonstrate rover design concepts and test structural integrity for the Australian Rover Challenge (ARCh) simulated lunar competition.",
+    image: "/proto-wally.jpg",
+    category: "Prototype",
+    status: "In Development"
+  },
+  {
+    id: "3",
+    title: "Robotic Arm",
+    description: "An advanced robotic manipulation system designed for sample collection and scientific instrument deployment for the Australian Rover Challenge (ARCh) simulated lunar competition.",
+    image: "/image-placeholder.png",
+    category: "Hardware",
+    status: "Design Phase"
   }
 ];
 
