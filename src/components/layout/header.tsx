@@ -50,10 +50,10 @@ export function Header() {
                 Events
               </Link> 
               <Link 
-                href="/blog" 
+                href="/arch" 
                 className="text-2xl font-normal transition-colors hover:text-primary"
               >
-                Blog
+                ARCh
               </Link>
               
               
@@ -138,11 +138,11 @@ export function Header() {
               Events
             </Link>
             <Link 
-              href="/blog" 
+              href="/arch" 
               className="block text-lg font-medium transition-colors hover:text-primary py-2"
               onClick={closeMenu}
             >
-              Blog
+              ARCh
             </Link>
             <Link 
               href="/join" 
