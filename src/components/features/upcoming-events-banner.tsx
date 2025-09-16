@@ -71,7 +71,7 @@ export function UpcomingEventsBanner() {
             <div className="flex items-center gap-1 sm:gap-2 text-white flex-shrink-0">
               <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
               <Badge variant="secondary" className="text-xs sm:text-sm text-white">
-                {currentEvent.isNextWeek ? "Next Week" : "Upcoming"}
+                {currentEvent.timeLabel}
               </Badge>
             </div>
             

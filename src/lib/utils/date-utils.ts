@@ -67,7 +67,51 @@ export function isDateInFuture(date: Date): boolean {
 }
 
 /**
- * Check if date is within next week
+ * Check if date is today
+ */
+export function isDateToday(date: Date): boolean {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    return false
+  }
+  
+  const now = new Date()
+  return date.toDateString() === now.toDateString()
+}
+
+/**
+ * Check if date is tomorrow
+ */
+export function isDateTomorrow(date: Date): boolean {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    return false
+  }
+  
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  return date.toDateString() === tomorrow.toDateString()
+}
+
+/**
+ * Check if date is this week (within next 7 days from today, but not today or tomorrow)
+ */
+export function isDateThisWeek(date: Date): boolean {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    return false
+  }
+  
+  if (isDateToday(date) || isDateTomorrow(date)) {
+    return false
+  }
+  
+  const now = new Date()
+  const endOfWeek = new Date(now)
+  endOfWeek.setDate(now.getDate() + 7)
+  
+  return date >= now && date <= endOfWeek
+}
+
+/**
+ * Check if date is within next week (legacy function - now encompasses next 7 days)
  */
 export function isDateInNextWeek(date: Date): boolean {
   if (!(date instanceof Date) || isNaN(date.getTime())) {
@@ -113,6 +157,33 @@ export function parseDateSafely(dateString: string): Date | null {
   } catch {
     return null
   }
+}
+
+/**
+ * Get appropriate time label for event display
+ */
+export function getEventTimeLabel(date: Date): string {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    return 'Upcoming'
+  }
+  
+  if (isDateToday(date)) {
+    return 'Today'
+  }
+  
+  if (isDateTomorrow(date)) {
+    return 'Tomorrow'
+  }
+  
+  if (isDateThisWeek(date)) {
+    return 'This Week'
+  }
+  
+  if (isDateInNextWeek(date)) {
+    return 'Next Week'
+  }
+  
+  return 'Upcoming'
 }
 
 /**

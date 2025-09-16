@@ -6,7 +6,11 @@ import {
   isDateInNextWeek, 
   getDateRangeForAPI,
   parseDateSafely,
-  isDateInNextThreeWeeks
+  isDateInNextThreeWeeks,
+  getEventTimeLabel,
+  isDateToday,
+  isDateTomorrow,
+  isDateThisWeek
 } from '@/lib/utils/date-utils';
 
 export interface GoogleCalendarEvent {
@@ -57,6 +61,10 @@ export interface ProcessedEvent {
   hangoutLink?: string;
   isNextWeek: boolean;
   isNextThreeWeeks: boolean;
+  timeLabel: string;
+  isToday: boolean;
+  isTomorrow: boolean;
+  isThisWeek: boolean;
 }
 
 // Check if API Key is configured
@@ -121,7 +129,11 @@ export function processGoogleCalendarEvents(events: GoogleCalendarEvent[]): Proc
     
     const isUpcoming = isDateInFuture(validStartDate);
     const isNextWeek = isDateInNextWeek(validStartDate);
-    const isNextThreeWeeks = isDateInNextThreeWeeks(validStartDate); 
+    const isNextThreeWeeks = isDateInNextThreeWeeks(validStartDate);
+    const isToday = isDateToday(validStartDate);
+    const isTomorrow = isDateTomorrow(validStartDate);
+    const isThisWeek = isDateThisWeek(validStartDate);
+    const timeLabel = getEventTimeLabel(validStartDate); 
 
     // Extract time from dateTime
     let time = 'TBD';
@@ -155,6 +167,10 @@ export function processGoogleCalendarEvents(events: GoogleCalendarEvent[]): Proc
       hangoutLink,
       isNextWeek,
       isNextThreeWeeks,
+      timeLabel,
+      isToday,
+      isTomorrow,
+      isThisWeek,
     };
   });
 }
