@@ -19,24 +19,24 @@ export function Footer() {
           </div>
           <div className="space-y-3 sm:space-y-4">
             <h4 className="text-2xl font-semibold">Website</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               <li>
-                <Link href="/events" className="text-foreground dark:text-white text-lg hover:text-foreground transition-colors">
+                <Link href="/events" className="text-foreground dark:text-white text-base hover:text-foreground transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-foreground dark:text-white text-lg hover:text-foreground transition-colors">
+                <Link href="/events" className="text-foreground dark:text-white text-base hover:text-foreground transition-colors">
                   Events
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-foreground dark:text-white text-lg hover:text-foreground transition-colors">
+                <Link href="/blog" className="text-foreground dark:text-white text-base hover:text-foreground transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-foreground dark:text-white text-lg hover:text-foreground transition-colors"> 
+                <Link href="/contact" className="text-foreground dark:text-white text-base hover:text-foreground transition-colors"> 
                   Contact Us
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t">
-          <p className="text-sm text-muted-foreground text-start">
+          <p className="text-base text-muted-foreground text-start">
           Built by <Link href="https://www.mqrover.space/" className="text-muted-foreground hover:text-foreground transition-colors">Macquarie Aerospace Rover Society</Link>. The source code is available on <Link href="https://github.com/mqrover" className="text-muted-foreground hover:text-foreground transition-colors">GitHub</Link>.
           </p>
         </div>

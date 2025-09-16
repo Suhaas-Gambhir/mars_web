@@ -34,33 +34,32 @@ export function EventListView({ events }: EventListViewProps) {
               {/* Event Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary" className="text-xs text-white">{event.category}</Badge>
-                  <span className="text-xs font-semibold text-primary">{event.price}</span>
+                  <Badge variant="secondary" className="text-sm text-white">{event.category}</Badge>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-muted-foreground mb-4">
+                <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-base text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-5 h-5" />
                     
                     <span>{event.date}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
+                    <Clock className="w-5 h-5" />
                     <span>{formatSydneyTimeRange(event.startDate, event.endDate)}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-5 h-5" />
                     <span className="truncate">{event.location}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Tag className="w-4 h-4" />
+                    <Tag className="w-5 h-5" />
                     <span>{event.organizer}</span>
                   </div>
                 </div>
 
                 {/* Description (expandable) */}
                 <div className="mb-4">
-                  <p className={`text-sm text-muted-foreground ${expandedEvent === event.id ? '' : 'line-clamp-2'}`}>
+                  <p className={`text-base text-muted-foreground ${expandedEvent === event.id ? '' : 'line-clamp-2'}`}>
                     {event.description}
                   </p>
                   {event.description.length > 100 && (

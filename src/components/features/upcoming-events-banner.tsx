@@ -70,7 +70,7 @@ export function UpcomingEventsBanner() {
           <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
             <div className="flex items-center gap-1 sm:gap-2 text-white flex-shrink-0">
               <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-              <Badge variant="secondary" className="text-xs sm:text-sm text-white">
+              <Badge variant="secondary" className="text-sm sm:text-base text-white">
                 {currentEvent.timeLabel}
               </Badge>
             </div>
@@ -79,7 +79,7 @@ export function UpcomingEventsBanner() {
               <h3 className="text-white font-semibold truncate">
                 {currentEvent.title}
               </h3>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-white/80 text-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-white/80 text-base">
                 <div className="flex items-center gap-1 min-w-0">
                   <Clock className="w-4 h-4 flex-shrink-0" />
                   <span className="truncate">{currentEvent.date}</span>
@@ -105,7 +105,7 @@ export function UpcomingEventsBanner() {
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </Button>
-                <span className="hidden sm:inline text-white text-sm">
+                <span className="hidden sm:inline text-white text-base">
                   {currentEventIndex + 1} / {events.length}
                 </span>
                 <Button

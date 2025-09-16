@@ -177,11 +177,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="outline" className="text-xs">Aug 20, 2025</Badge>
-                        <span className="text-xs text-muted-foreground">Registration Opens</span>
+                        <Badge variant="outline" className="text-sm">Aug 20, 2025</Badge>
+                        <span className="text-sm text-muted-foreground">Registration Opens</span>
                       </div>
-                      <h4 className="font-medium text-sm">Rules and Requirements Released</h4>
-                      <p className="text-xs text-muted-foreground">Team registration opens for 2026 competition</p>
+                      <h4 className="font-medium text-base">Rules and Requirements Released</h4>
+                      <p className="text-sm text-muted-foreground">Team registration opens for 2026 competition</p>
                     </div>
                   </div>
 
@@ -191,11 +191,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="outline" className="text-xs">Sep 4, 2025</Badge>
-                        <span className="text-xs text-muted-foreground">CDR Released</span>
+                        <Badge variant="outline" className="text-sm">Sep 4, 2025</Badge>
+                        <span className="text-sm text-muted-foreground">CDR Released</span>
                       </div>
-                      <h4 className="font-medium text-sm">Critical Design Review Available</h4>
-                      <p className="text-xs text-muted-foreground">CDR guidelines and templates released</p>
+                      <h4 className="font-medium text-base">Critical Design Review Available</h4>
+                      <p className="text-sm text-muted-foreground">CDR guidelines and templates released</p>
                     </div>
                   </div>
 
@@ -205,11 +205,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="destructive" className="text-xs">Sep 17, 2025</Badge>
-                        <span className="text-xs text-destructive">Deadline</span>
+                        <Badge variant="destructive" className="text-sm">Sep 17, 2025</Badge>
+                        <span className="text-sm text-destructive">Deadline</span>
                       </div>
-                      <h4 className="font-medium text-sm">Team Registration Closes</h4>
-                      <p className="text-xs text-muted-foreground">Final day to register your team</p>
+                      <h4 className="font-medium text-base">Team Registration Closes</h4>
+                      <p className="text-sm text-muted-foreground">Final day to register your team</p>
                     </div>
                   </div>
 
@@ -219,11 +219,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="outline" className="text-xs">Oct 29, 2025</Badge>
-                        <span className="text-xs text-muted-foreground">Submission</span>
+                        <Badge variant="outline" className="text-sm">Oct 29, 2025</Badge>
+                        <span className="text-sm text-muted-foreground">Submission</span>
                       </div>
-                      <h4 className="font-medium text-sm">CDR Due + SAR Guidelines</h4>
-                      <p className="text-xs text-muted-foreground">CDR submission deadline, SAR and Cost Report guidelines released</p>
+                      <h4 className="font-medium text-base">CDR Due + SAR Guidelines</h4>
+                      <p className="text-sm text-muted-foreground">CDR submission deadline, SAR and Cost Report guidelines released</p>
                     </div>
                   </div>
 
@@ -233,11 +233,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="outline" className="text-xs">Feb 11, 2026</Badge>
-                        <span className="text-xs text-muted-foreground">Submission</span>
+                        <Badge variant="outline" className="text-sm">Feb 11, 2026</Badge>
+                        <span className="text-sm text-muted-foreground">Submission</span>
                       </div>
-                      <h4 className="font-medium text-sm">SAR and Video Due</h4>
-                      <p className="text-xs text-muted-foreground">System Acceptance Review and demonstration video submission</p>
+                      <h4 className="font-medium text-base">SAR and Video Due</h4>
+                      <p className="text-sm text-muted-foreground">System Acceptance Review and demonstration video submission</p>
                     </div>
                   </div>
 
@@ -247,11 +247,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="outline" className="text-xs">Mar 11, 2026</Badge>
-                        <span className="text-xs text-muted-foreground">Final Submission</span>
+                        <Badge variant="outline" className="text-sm">Mar 11, 2026</Badge>
+                        <span className="text-sm text-muted-foreground">Final Submission</span>
                       </div>
-                      <h4 className="font-medium text-sm">Cost Report Due</h4>
-                      <p className="text-xs text-muted-foreground">Final cost analysis and budget report submission</p>
+                      <h4 className="font-medium text-base">Cost Report Due</h4>
+                      <p className="text-sm text-muted-foreground">Final cost analysis and budget report submission</p>
                     </div>
                   </div>
 
@@ -261,11 +261,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="default" className="text-xs">Mar 25, 2026</Badge>
-                        <span className="text-xs text-primary">Event Begins</span>
+                        <Badge variant="default" className="text-sm">Mar 25, 2026</Badge>
+                        <span className="text-sm text-primary">Event Begins</span>
                       </div>
-                      <h4 className="font-medium text-sm">Opening Ceremony</h4>
-                      <p className="text-xs text-muted-foreground">Official start of the 2026 Australian Rover Challenge</p>
+                      <h4 className="font-medium text-base">Opening Ceremony</h4>
+                      <p className="text-sm text-muted-foreground">Official start of the 2026 Australian Rover Challenge</p>
                     </div>
                   </div>
 
@@ -275,11 +275,11 @@ export default function ARChPage() {
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge className="text-xs">Mar 26-29, 2026</Badge>
-                        <span className="text-xs text-primary">Competition</span>
+                        <Badge className="text-sm">Mar 26-29, 2026</Badge>
+                        <span className="text-sm text-primary">Competition</span>
                       </div>
-                      <h4 className="font-semibold text-sm">Competition Period</h4>
-                      <p className="text-xs text-muted-foreground">Four days of rover challenges and demonstrations</p>
+                      <h4 className="font-semibold text-base">Competition Period</h4>
+                      <p className="text-sm text-muted-foreground">Four days of rover challenges and demonstrations</p>
                     </div>
                   </div>
                 </div>

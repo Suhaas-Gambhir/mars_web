@@ -15,27 +15,27 @@ export function EventCard({ event, showActions = true }: EventCardProps) {
     <Card className="h-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-4">
       <div className="flex items-center justify-between mb-2">
-          <Badge variant="secondary" className="text-xs text-white">{event.category}</Badge>
-          <span className="text-xs sm:text-sm font-semibold text-primary">{event.price}</span>
+          <Badge variant="secondary" className="text-sm text-white">{event.category}</Badge>
+          <span className="text-sm sm:text-base font-semibold text-primary">{event.price}</span>
         </div>
-        <CardTitle className="text-lg sm:text-xl line-clamp-2">{event.title}</CardTitle>
-        <CardDescription className="text-sm sm:text-base line-clamp-2">{event.description}</CardDescription>
+        <CardTitle className="text-xl sm:text-2xl line-clamp-2">{event.title}</CardTitle>
+        <CardDescription className="text-base sm:text-lg line-clamp-2">{event.description}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3 sm:space-y-4 pt-0">
-        <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
-          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+        <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
           {event.date}
         </div>
-        <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
-          <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+        <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+          <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
           {formatSydneyTimeRange(event.startDate, event.endDate)}
         </div>
-        <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
-          <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+        <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+          <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
           {event.location}
         </div>
-        <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
-          <Tag className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+        <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+          <Tag className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
           {event.organizer}
         </div>
         
