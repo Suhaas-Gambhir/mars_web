@@ -32,7 +32,7 @@ function HeroSection() {
               <span className="text-primary"> Space Robotics</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We're a student-led team building a semi-autonomous lunar rover for the 
+              We&apos;re a student-led team building a semi-autonomous lunar rover for the 
               <strong> Australian Rover Challenge 2026</strong>. Join us to gain hands-on experience 
               in space robotics, interdisciplinary teamwork, and cutting-edge design.
             </p>

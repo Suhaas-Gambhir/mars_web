@@ -79,10 +79,10 @@ export default function ARChPage() {
               </p>
 
               <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
-                "While the ultimate focus of our Centre is to support long-term human presence beyond 
+                &ldquo;While the ultimate focus of our Centre is to support long-term human presence beyond 
                 low-earth orbit, we know that our astronauts will necessarily be preceded, and then 
                 accompanied by, significant numbers and varied types of remotely operated or 
-                semi-autonomous robots."
+                semi-autonomous robots.&rdquo;
                 <footer className="mt-2 text-sm font-medium">— A/Prof John Culton, Director, Andy Thomas Centre for Space Resources</footer>
               </blockquote>
             </CardContent>
@@ -136,7 +136,7 @@ export default function ARChPage() {
               <p className="text-muted-foreground">
                 The Macquarie Aerospace Rover Society (MARS) is working hard to improve our rover design, 
                 autonomous capabilities, and task performance for the 2026 Australian Rover Challenge. 
-                We're focused on developing cutting-edge solutions and building a strong team to achieve our goals.
+                We&apos;re focused on developing cutting-edge solutions and building a strong team to achieve our goals.
               </p>
               
               <div className="p-4 bg-primary/5 rounded-lg">
@@ -304,13 +304,13 @@ export default function ARChPage() {
                 Competing in the ARC provides students with hands-on experience in robotics, 
                 artificial intelligence, mechanical and electrical engineering, and space exploration 
                 technologies. The skill sets developed align perfectly with efforts to develop infrastructure 
-                for long-duration human operations in deep space, including NASA's Artemis program.
+                for long-duration human operations in deep space, including NASA&apos;s Artemis program.
               </p>
               
               <p className="text-muted-foreground">
                 This competition represents an incredible opportunity for students to gain practical 
                 experience in space robotics and contribute to the advancement of planetary exploration 
-                technologies. It's an exciting opportunity to push the boundaries of innovation and 
+                technologies. It&apos;s an exciting opportunity to push the boundaries of innovation and 
                 contribute to the future of space exploration.
               </p>
             </CardContent>
