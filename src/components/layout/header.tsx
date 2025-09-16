@@ -67,7 +67,7 @@ export function Header() {
                 href="/sponsors" 
                 className="text-2xl font-normal transition-colors hover:text-primary" 
               >
-                Sponsors Us
+                Partners
               </Link>
               <Link 
                 href="/contact" 
@@ -177,7 +177,7 @@ export function Header() {
               className="block text-lg font-medium transition-colors hover:text-primary py-2"
               onClick={closeMenu}
             >
-              Sponsors Us
+              Partners
             </Link>
             <div className="pt-4 border-t flex flex-row items-center justify-between space-y-4">
               <div className="flex items-center space-x-2">
