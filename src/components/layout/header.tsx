@@ -32,16 +32,16 @@ export function Header() {
         <div className="hidden md:flex items-center space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
             <Link 
+                href="/" 
+                className="text-2xl font-normal transition-colors hover:text-primary"
+              >
+                Home
+              </Link>
+            <Link 
                 href="/about" 
                 className="text-2xl font-normal transition-colors hover:text-primary"
               >
                 About
-              </Link>
-              <Link 
-                href="/team" 
-                className="text-2xl font-normal transition-colors hover:text-primary" 
-              >
-                Team
               </Link>
               <Link 
                 href="/events" 
@@ -124,11 +124,11 @@ export function Header() {
         <div className="md:hidden border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <nav className="container py-4 space-y-4">
             <Link 
-              href="/team" 
+              href="/" 
               className="block text-lg font-medium transition-colors hover:text-primary py-2"
               onClick={closeMenu}
             >
-              Team
+              Home
             </Link>
             <Link 
               href="/events" 

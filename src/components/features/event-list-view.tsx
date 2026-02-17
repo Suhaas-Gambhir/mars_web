@@ -8,10 +8,12 @@ import {
   Calendar, 
   Clock, 
   MapPin, 
-  Tag
+  Tag,
+  ArrowRight
 } from "lucide-react"
 import { ProcessedEvent } from "@/lib/google-calendar"
 import { EventActions } from "./event-actions"
+import { EventDetailDialog } from "./event-detail-dialog"
 import { formatSydneyTimeRange } from "@/lib/utils/date-utils"
 
 interface EventListViewProps {
@@ -19,66 +21,106 @@ interface EventListViewProps {
 }
 
 export function EventListView({ events }: EventListViewProps) {
-  const [expandedEvent, setExpandedEvent] = useState<string | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<ProcessedEvent | null>(null)
+  const [isDetailOpen, setIsDetailOpen] = useState(false)
 
-  const toggleExpanded = (eventId: string) => {
-    setExpandedEvent(expandedEvent === eventId ? null : eventId)
+  const openEventDetail = (event: ProcessedEvent) => {
+    setSelectedEvent(event)
+    setIsDetailOpen(true)
   }
 
   return (
-    <div className="space-y-4">
-      {events.map((event) => (
-        <Card key={event.id} className="hover:shadow-md transition-shadow">
-          <CardContent className="p-6">
-            <div className="flex items-start justify-between">
-              {/* Event Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary" className="text-sm text-white">{event.category}</Badge>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-base text-muted-foreground mb-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5" />
-                    
-                    <span>{event.date}</span>
+    <>
+      <div className="space-y-4">
+        {events.map((event) => (
+          <Card 
+            key={event.id} 
+            className="hover:shadow-md transition-all hover:scale-[1.01] cursor-pointer group border-2"
+            onClick={() => openEventDetail(event)}
+          >
+            <CardContent className="p-6">
+              <div className="flex items-start justify-between gap-4">
+                {/* Event Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-3 flex-wrap">
+                    <Badge variant="secondary" className="text-sm">{event.category}</Badge>
+                    {event.isToday && (
+                      <Badge variant="destructive" className="text-sm animate-pulse">
+                        Live Now
+                      </Badge>
+                    )}
+                    {event.isTomorrow && (
+                      <Badge variant="default" className="text-sm">
+                        Tomorrow
+                      </Badge>
+                    )}
+                    {event.isNextWeek && !event.isTomorrow && !event.isToday && (
+                      <Badge variant="outline" className="text-sm">
+                        Next Week
+                      </Badge>
+                    )}
+                    <span className="text-sm font-semibold text-primary ml-auto">{event.price}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
-                    <span>{formatSydneyTimeRange(event.startDate, event.endDate)}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5" />
-                    <span className="truncate">{event.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Tag className="w-5 h-5" />
-                    <span>{event.organizer}</span>
-                  </div>
-                </div>
-
-                {/* Description (expandable) */}
-                <div className="mb-4">
-                  <p className={`text-base text-muted-foreground ${expandedEvent === event.id ? '' : 'line-clamp-2'}`}>
+                  
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    {event.title}
+                  </h3>
+                  
+                  <p className="text-base text-muted-foreground mb-4 line-clamp-2">
                     {event.description}
                   </p>
-                  {event.description.length > 100 && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => toggleExpanded(event.id)}
-                      className="mt-2 p-0 h-auto text-primary hover:text-primary/80"
-                    >
-                      {expandedEvent === event.id ? 'Show less' : 'Show more'}
-                    </Button>
-                  )}
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-primary/10 rounded-md">
+                        <Calendar className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-sm">{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-primary/10 rounded-md">
+                        <Clock className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-sm">{formatSydneyTimeRange(event.startDate, event.endDate)}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-primary/10 rounded-md">
+                        <MapPin className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-sm truncate">{event.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-primary/10 rounded-md">
+                        <Tag className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-sm">{event.organizer}</span>
+                    </div>
+                  </div>
+
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      openEventDetail(event)
+                    }}
+                  >
+                    View Details
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
                 </div>
-                <EventActions event={event} />
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <EventDetailDialog 
+        event={selectedEvent}
+        open={isDetailOpen}
+        onOpenChange={setIsDetailOpen}
+      />
+    </>
   )
 } 
