@@ -1,11 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ProcessedEvent } from "@/lib/google-calendar"
-import { Calendar, Clock, MapPin, Tag, Video, ExternalLink, CalendarPlus, X } from "lucide-react"
+import { Calendar, Clock, MapPin, Tag, Video, ExternalLink, CalendarPlus } from "lucide-react"
 import { useCalendarActions } from "@/hooks/use-calendar-actions"
 import { formatSydneyTimeRange } from "@/lib/utils/date-utils"
 

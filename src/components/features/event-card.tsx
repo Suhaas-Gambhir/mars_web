@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Calendar, Clock, MapPin, Tag, ArrowRight } from "lucide-react"
+import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ProcessedEvent } from "@/lib/google-calendar"
-import { EventActions } from "./event-actions"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { formatSydneyTimeRange } from "@/lib/utils/date-utils"
@@ -12,10 +11,9 @@ import { EventDetailDialog } from "./event-detail-dialog"
 
 interface EventCardProps {
   event: ProcessedEvent
-  showActions?: boolean
 }
 
-export function EventCard({ event, showActions = true }: EventCardProps) {
+export function EventCard({ event }: EventCardProps) {
   const [isDetailOpen, setIsDetailOpen] = useState(false)
 
   return (
